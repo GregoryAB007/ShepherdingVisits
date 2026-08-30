@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+
+# Tina generates these on dev/build
+tina/__generated__
+public/admin
+
+.env
+.env.local
+.DS_Store

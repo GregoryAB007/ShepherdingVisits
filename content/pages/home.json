@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Fieldnotes — the weekly planning kit",
+    "description": "A printable planning kit that turns a scattered week into one calm page. Instant download, lifetime updates."
+  },
+  "hero": {
+    "eyebrow": "Instant download · PDF + Notion",
+    "headline": "Plan the whole week on one calm page.",
+    "subheadline": "Fieldnotes is a planning kit for people whose to-do lists live in six different apps. Print it or duplicate it into Notion — either way, Monday stops feeling like an ambush.",
+    "ctaLabel": "Get the kit",
+    "stripePaymentLink": "https://buy.stripe.com/replace-with-your-payment-link",
+    "priceNote": "Secure checkout by Stripe · Instant delivery by email"
+  },
+  "features": [
+    {
+      "title": "One page, not one more app",
+      "description": "A single weekly spread that holds tasks, appointments, and the three things that actually matter. Nothing to sync, nothing to migrate."
+    },
+    {
+      "title": "Print it or Notion it",
+      "description": "Ships as a print-ready PDF and a one-click Notion template, so it works whether you love paper or live in your browser."
+    },
+    {
+      "title": "Lifetime updates",
+      "description": "Buy once. Every new layout and seasonal edition lands in your inbox at no extra cost."
+    }
+  ],
+  "pricing": {
+    "title": "One price, everything included",
+    "price": "$19",
+    "unit": "one-time",
+    "description": "The full kit: weekly + daily spreads, the Notion template, and all future updates. 30-day money-back guarantee, no questions asked.",
+    "ctaLabel": "Buy Fieldnotes"
+  },
+  "footer": {
+    "line": "Made with too much coffee and exactly one page.",
+    "contactEmail": "hello@example.com"
+  }
+}
