@@ -4,11 +4,10 @@ import { tinaField } from "tinacms/dist/react";
 import {
   FamilyScene,
   JourneyPath,
-  CradledHeart,
   Region,
   type Palette,
 } from "../illustrations";
-import { ctaHref, phoneHref, type DesignProps } from "./types";
+import { ctaHref, phoneHref, LOGO, LOGO_MARK, type DesignProps } from "./types";
 
 // Stately print look: ivory paper, near-black ink, oxblood and gold rules.
 const palette: Palette = { ink: "#1c1a17", accent: "#7b2d26", soft: "#e8e2d5" };
@@ -17,7 +16,7 @@ export default function JurisDesign({ page }: DesignProps) {
   const {
     brand, hero, intro, principles, audiences, serve, services, steps,
     team, director, commitment, areas, availability, locations, fees,
-    finalCta, resources, footer,
+    finalCta, contact, resources, footer,
   } = page;
   const mail = ctaHref(page);
   const tel = phoneHref(page);
@@ -25,6 +24,7 @@ export default function JurisDesign({ page }: DesignProps) {
   return (
     <div className="dz d-juris" id="top">
       <header className="jr-header">
+        <img className="jr-logo-mark" src={LOGO_MARK} alt="" aria-hidden="true" />
         <span className="jr-brand" data-tina-field={tinaField(brand ?? undefined, "name")}>
           {brand?.name}
         </span>
@@ -56,6 +56,9 @@ export default function JurisDesign({ page }: DesignProps) {
           </a>
           <a className="jr-btn jr-btn-outline" href="#services" data-tina-field={tinaField(hero ?? undefined, "secondaryCta")}>
             {hero?.secondaryCta}
+          </a>
+          <a className="jr-btn jr-btn-outline" href="#about">
+            About Us
           </a>
         </div>
         <div className="jr-hero-art"><FamilyScene {...palette} /></div>
@@ -145,75 +148,6 @@ export default function JurisDesign({ page }: DesignProps) {
         </section>
       )}
 
-      {steps && (
-        <section className="jr-sec jr-sec-shaded">
-          <div className="jr-heading-block">
-            <span className="jr-eyebrow" data-tina-field={tinaField(steps, "eyebrow")}>{steps.eyebrow}</span>
-            <h2 className="jr-h2" data-tina-field={tinaField(steps, "heading")}>{steps.heading}</h2>
-          </div>
-          <p className="jr-body" data-tina-field={tinaField(steps, "body")}>{steps.body}</p>
-          <div className="jr-journey"><JourneyPath {...palette} /></div>
-          <div className="jr-steps">
-            {steps.items?.map(
-              (s, i) =>
-                s && (
-                  <div className="jr-step" key={i} data-tina-field={tinaField(s)}>
-                    <span className="jr-roman">{["I", "II", "III", "IV", "V"][i] ?? i + 1}</span>
-                    <div>
-                      <h3 className="jr-smallcaps">{s.title}</h3>
-                      <p className="jr-body">{s.description}</p>
-                    </div>
-                  </div>
-                )
-            )}
-          </div>
-          {steps.note && <p className="jr-values" data-tina-field={tinaField(steps, "note")}>{steps.note}</p>}
-        </section>
-      )}
-
-      {team && (
-        <section className="jr-sec">
-          <div className="jr-heading-block">
-            <span className="jr-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
-            <h2 className="jr-h2" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
-          </div>
-          <p className="jr-body" data-tina-field={tinaField(team, "body")}>{team.body}</p>
-          <div className="jr-cred-grid">
-            {team.credentials?.map(
-              (c, i) =>
-                c && (
-                  <div className="jr-cred" key={i} data-tina-field={tinaField(c)}>
-                    <h3 className="jr-smallcaps">{c.title}</h3>
-                    <p className="jr-body">{c.description}</p>
-                  </div>
-                )
-            )}
-          </div>
-        </section>
-      )}
-
-      {director && (
-        <section className="jr-sec jr-sec-shaded">
-          <div className="jr-heading-block">
-            <span className="jr-eyebrow" data-tina-field={tinaField(director, "eyebrow")}>{director.eyebrow}</span>
-            <h2 className="jr-h2" data-tina-field={tinaField(director, "heading")}>{director.heading}</h2>
-          </div>
-          <p className="jr-body" data-tina-field={tinaField(director, "body")}>{director.body}</p>
-        </section>
-      )}
-
-      {commitment && (
-        <section className="jr-sec jr-sec-oxblood">
-          <CradledHeart ink="#f4ede2" accent="#c9a35c" soft="#8d453d" />
-          <span className="jr-eyebrow light" data-tina-field={tinaField(commitment, "eyebrow")}>
-            {commitment.eyebrow}
-          </span>
-          <h2 className="jr-h2" data-tina-field={tinaField(commitment, "heading")}>{commitment.heading}</h2>
-          <p className="jr-body" data-tina-field={tinaField(commitment, "body")}>{commitment.body}</p>
-          <p className="jr-mantra">{commitment.lines?.filter(Boolean).join(" — ")}</p>
-        </section>
-      )}
-
       <section className="jr-sec">
         <div className="jr-region"><Region {...palette} /></div>
         <div className="jr-cols2">
@@ -248,10 +182,86 @@ export default function JurisDesign({ page }: DesignProps) {
               <p className="jr-body">{fees.body}</p>
               <p className="jr-body">{fees.paymentNote}</p>
               <p className="jr-body">{fees.cancellationNote}</p>
+              {contact?.phone && tel && (
+                <p className="jr-list-line">
+                  Call or text <a className="jr-tel" href={tel} data-tina-field={tinaField(contact, "phone")}>{contact.phone}</a> for current rates.
+                </p>
+              )}
             </div>
           )}
         </div>
       </section>
+
+      {steps && (
+        <section className="jr-sec jr-sec-shaded">
+          <div className="jr-heading-block">
+            <span className="jr-eyebrow" data-tina-field={tinaField(steps, "eyebrow")}>{steps.eyebrow}</span>
+            <h2 className="jr-h2" data-tina-field={tinaField(steps, "heading")}>{steps.heading}</h2>
+          </div>
+          <p className="jr-body" data-tina-field={tinaField(steps, "body")}>{steps.body}</p>
+          <div className="jr-journey"><JourneyPath {...palette} /></div>
+          <div className="jr-steps">
+            {steps.items?.map(
+              (s, i) =>
+                s && (
+                  <div className="jr-step" key={i} data-tina-field={tinaField(s)}>
+                    <span className="jr-roman">{["I", "II", "III", "IV", "V"][i] ?? i + 1}</span>
+                    <div>
+                      <h3 className="jr-smallcaps">{s.title}</h3>
+                      <p className="jr-body">{s.description}</p>
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
+          {steps.note && <p className="jr-values" data-tina-field={tinaField(steps, "note")}>{steps.note}</p>}
+        </section>
+      )}
+
+      {director && (
+        <section className="jr-sec jr-sec-shaded">
+          <div className="jr-heading-block">
+            <span className="jr-eyebrow" data-tina-field={tinaField(director, "eyebrow")}>{director.eyebrow}</span>
+            <h2 className="jr-h2" data-tina-field={tinaField(director, "heading")}>{director.heading}</h2>
+          </div>
+          <p className="jr-body" data-tina-field={tinaField(director, "body")}>{director.body}</p>
+        </section>
+      )}
+
+      {commitment && (
+        <section className="jr-sec jr-sec-oxblood">
+          <span className="jr-logo-plate">
+            <img src={LOGO} alt="Shepherding Family Services logo" />
+          </span>
+          <span className="jr-eyebrow light" data-tina-field={tinaField(commitment, "eyebrow")}>
+            {commitment.eyebrow}
+          </span>
+          <h2 className="jr-h2" data-tina-field={tinaField(commitment, "heading")}>{commitment.heading}</h2>
+          <p className="jr-body" data-tina-field={tinaField(commitment, "body")}>{commitment.body}</p>
+          <p className="jr-mantra">{commitment.lines?.filter(Boolean).join(" — ")}</p>
+        </section>
+      )}
+
+      {team && (
+        <section className="jr-sec" id="about">
+          <div className="jr-heading-block">
+            <span className="jr-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
+            <h2 className="jr-h2" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
+          </div>
+          <p className="jr-body" data-tina-field={tinaField(team, "body")}>{team.body}</p>
+          <div className="jr-cred-grid">
+            {team.credentials?.map(
+              (c, i) =>
+                c && (
+                  <div className="jr-cred" key={i} data-tina-field={tinaField(c)}>
+                    <h3 className="jr-smallcaps">{c.title}</h3>
+                    <p className="jr-body">{c.description}</p>
+                  </div>
+                )
+            )}
+          </div>
+        </section>
+      )}
 
       {finalCta && (
         <section className="jr-sec jr-sec-shaded jr-cta">
@@ -262,6 +272,14 @@ export default function JurisDesign({ page }: DesignProps) {
             <a className="jr-btn" href={mail}>{finalCta.primaryCta}</a>
             <a className="jr-btn jr-btn-outline" href={tel ?? mail}>{finalCta.secondaryCta}</a>
           </div>
+          {contact?.phone && tel && (
+            <p className="jr-phone">
+              Call or text{" "}
+              <a className="jr-tel" href={tel} data-tina-field={tinaField(contact, "phone")}>
+                {contact.phone}
+              </a>
+            </p>
+          )}
         </section>
       )}
 
@@ -276,6 +294,7 @@ export default function JurisDesign({ page }: DesignProps) {
             (r, i) =>
               r?.label && <a key={i} href={r.url ?? "#"} data-tina-field={tinaField(r)}>{r.label}</a>
           )}
+          {contact?.phone && tel && <a href={tel}>{contact.phone}</a>}
           {footer?.contactEmail && <a href={`mailto:${footer.contactEmail}`}>{footer.contactEmail}</a>}
         </div>
         <p className="jr-footer-line" data-tina-field={tinaField(footer ?? undefined, "line")}>{footer?.line}</p>

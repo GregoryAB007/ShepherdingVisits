@@ -4,21 +4,19 @@ import { tinaField } from "tinacms/dist/react";
 import {
   FamilyScene,
   JourneyPath,
-  CradledHeart,
   Region,
   type Palette,
 } from "../illustrations";
-import { ctaHref, phoneHref, type DesignProps } from "./types";
+import { ctaHref, phoneHref, LOGO, LOGO_MARK, type DesignProps } from "./types";
 
 // Warm editorial palette: cream paper, deep brown ink, muted parchment panels.
 const palette: Palette = { ink: "#3b2e28", accent: "#b98d5e", soft: "#e6dccb" };
-const darkPalette: Palette = { ink: "#f7ede1", accent: "#b98d5e", soft: "#5a4a40" };
 
 export default function AtelierDesign({ page }: DesignProps) {
   const {
     brand, hero, intro, principles, audiences, serve, services, steps,
     team, director, commitment, areas, availability, locations, fees,
-    finalCta, resources, footer,
+    finalCta, contact, resources, footer,
   } = page;
   const mail = ctaHref(page);
   const tel = phoneHref(page);
@@ -26,6 +24,7 @@ export default function AtelierDesign({ page }: DesignProps) {
   return (
     <div className="dz d-atelier" id="top">
       <header className="at-header">
+        <img className="at-logo-mark" src={LOGO_MARK} alt="" aria-hidden="true" />
         <span className="at-brand" data-tina-field={tinaField(brand ?? undefined, "name")}>
           {brand?.name}
         </span>
@@ -60,6 +59,9 @@ export default function AtelierDesign({ page }: DesignProps) {
           </a>
           <a className="at-btn light" href="#services" data-tina-field={tinaField(hero ?? undefined, "secondaryCta")}>
             {hero?.secondaryCta}
+          </a>
+          <a className="at-btn light" href="#about">
+            About Us
           </a>
         </div>
       </section>
@@ -158,6 +160,51 @@ export default function AtelierDesign({ page }: DesignProps) {
         </section>
       )}
 
+      {/* Logistics: parchment 2x2 */}
+      <section className="at-sec at-sec-panel">
+        <div className="at-region"><Region {...palette} /></div>
+        <div className="at-cols2">
+          {areas && (
+            <div className="at-col" data-tina-field={tinaField(areas)}>
+              <span className="at-eyebrow">{areas.eyebrow}</span>
+              <h3 className="at-h3">{areas.heading}</h3>
+              <p className="at-list-line">{areas.items?.filter(Boolean).join(" · ")}</p>
+              <p className="at-body">{areas.body}</p>
+            </div>
+          )}
+          {availability && (
+            <div className="at-col" data-tina-field={tinaField(availability)}>
+              <span className="at-eyebrow">{availability.eyebrow}</span>
+              <h3 className="at-h3">{availability.heading}</h3>
+              <p className="at-body">{availability.body}</p>
+              <p className="at-list-line">{availability.items?.filter(Boolean).join(" · ")}</p>
+            </div>
+          )}
+          {locations && (
+            <div className="at-col" data-tina-field={tinaField(locations)}>
+              <span className="at-eyebrow">{locations.eyebrow}</span>
+              <h3 className="at-h3">{locations.heading}</h3>
+              <p className="at-body">{locations.body}</p>
+              <p className="at-list-line">{locations.items?.filter(Boolean).join(" · ")}</p>
+            </div>
+          )}
+          {fees && (
+            <div className="at-col" data-tina-field={tinaField(fees)}>
+              <span className="at-eyebrow">{fees.eyebrow}</span>
+              <h3 className="at-h3">{fees.heading}</h3>
+              <p className="at-body">{fees.body}</p>
+              <p className="at-body">{fees.paymentNote}</p>
+              <p className="at-body">{fees.cancellationNote}</p>
+              {contact?.phone && tel && (
+                <p className="at-list-line">
+                  Call or text <a className="at-tel" href={tel} data-tina-field={tinaField(contact, "phone")}>{contact.phone}</a> for current rates.
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Who we serve — dark band */}
       {serve && (
         <section className="at-sec at-sec-dark">
@@ -201,9 +248,40 @@ export default function AtelierDesign({ page }: DesignProps) {
         </section>
       )}
 
+      {director && (
+        <section className="at-sec">
+          <div className="at-center at-narrow">
+            <span className="at-eyebrow" data-tina-field={tinaField(director, "eyebrow")}>{director.eyebrow}</span>
+            <h2 className="at-h2 italic" data-tina-field={tinaField(director, "heading")}>{director.heading}</h2>
+            <p className="at-body" data-tina-field={tinaField(director, "body")}>{director.body}</p>
+          </div>
+        </section>
+      )}
+
+      {/* Commitment — dark, testimonial-style */}
+      {commitment && (
+        <section className="at-sec at-sec-dark">
+          <div className="at-center at-narrow">
+            <span className="at-logo-plate">
+              <img src={LOGO} alt="Shepherding Family Services logo" />
+            </span>
+            <span className="at-eyebrow light" data-tina-field={tinaField(commitment, "eyebrow")}>
+              {commitment.eyebrow}
+            </span>
+            <h2 className="at-h2 italic" data-tina-field={tinaField(commitment, "heading")}>
+              {commitment.heading}
+            </h2>
+            <p className="at-body" data-tina-field={tinaField(commitment, "body")}>{commitment.body}</p>
+            <p className="at-mantra">
+              {commitment.lines?.filter(Boolean).join("  ·  ")}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Team & standards */}
       {team && (
-        <section className="at-sec at-sec-panel">
+        <section className="at-sec at-sec-panel" id="about">
           <div className="at-center at-narrow">
             <span className="at-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
             <h2 className="at-h2 italic" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
@@ -223,75 +301,6 @@ export default function AtelierDesign({ page }: DesignProps) {
         </section>
       )}
 
-      {director && (
-        <section className="at-sec">
-          <div className="at-center at-narrow">
-            <span className="at-eyebrow" data-tina-field={tinaField(director, "eyebrow")}>{director.eyebrow}</span>
-            <h2 className="at-h2 italic" data-tina-field={tinaField(director, "heading")}>{director.heading}</h2>
-            <p className="at-body" data-tina-field={tinaField(director, "body")}>{director.body}</p>
-          </div>
-        </section>
-      )}
-
-      {/* Commitment — dark, testimonial-style */}
-      {commitment && (
-        <section className="at-sec at-sec-dark">
-          <div className="at-center at-narrow">
-            <CradledHeart {...darkPalette} />
-            <span className="at-eyebrow light" data-tina-field={tinaField(commitment, "eyebrow")}>
-              {commitment.eyebrow}
-            </span>
-            <h2 className="at-h2 italic" data-tina-field={tinaField(commitment, "heading")}>
-              {commitment.heading}
-            </h2>
-            <p className="at-body" data-tina-field={tinaField(commitment, "body")}>{commitment.body}</p>
-            <p className="at-mantra">
-              {commitment.lines?.filter(Boolean).join("  ·  ")}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Logistics: parchment 2x2 */}
-      <section className="at-sec at-sec-panel">
-        <div className="at-region"><Region {...palette} /></div>
-        <div className="at-cols2">
-          {areas && (
-            <div className="at-col" data-tina-field={tinaField(areas)}>
-              <span className="at-eyebrow">{areas.eyebrow}</span>
-              <h3 className="at-h3">{areas.heading}</h3>
-              <p className="at-list-line">{areas.items?.filter(Boolean).join(" · ")}</p>
-              <p className="at-body">{areas.body}</p>
-            </div>
-          )}
-          {availability && (
-            <div className="at-col" data-tina-field={tinaField(availability)}>
-              <span className="at-eyebrow">{availability.eyebrow}</span>
-              <h3 className="at-h3">{availability.heading}</h3>
-              <p className="at-body">{availability.body}</p>
-              <p className="at-list-line">{availability.items?.filter(Boolean).join(" · ")}</p>
-            </div>
-          )}
-          {locations && (
-            <div className="at-col" data-tina-field={tinaField(locations)}>
-              <span className="at-eyebrow">{locations.eyebrow}</span>
-              <h3 className="at-h3">{locations.heading}</h3>
-              <p className="at-body">{locations.body}</p>
-              <p className="at-list-line">{locations.items?.filter(Boolean).join(" · ")}</p>
-            </div>
-          )}
-          {fees && (
-            <div className="at-col" data-tina-field={tinaField(fees)}>
-              <span className="at-eyebrow">{fees.eyebrow}</span>
-              <h3 className="at-h3">{fees.heading}</h3>
-              <p className="at-body">{fees.body}</p>
-              <p className="at-body">{fees.paymentNote}</p>
-              <p className="at-body">{fees.cancellationNote}</p>
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* Final CTA */}
       {finalCta && (
         <section className="at-sec">
@@ -303,6 +312,14 @@ export default function AtelierDesign({ page }: DesignProps) {
               <a className="at-btn" href={mail}>{finalCta.primaryCta}</a>
               <a className="at-btn" href={tel ?? mail}>{finalCta.secondaryCta}</a>
             </div>
+            {contact?.phone && tel && (
+              <p className="at-phone">
+                Call or text{" "}
+                <a className="at-tel" href={tel} data-tina-field={tinaField(contact, "phone")}>
+                  {contact.phone}
+                </a>
+              </p>
+            )}
           </div>
         </section>
       )}
@@ -321,6 +338,7 @@ export default function AtelierDesign({ page }: DesignProps) {
                 </a>
               )
           )}
+          {contact?.phone && tel && <a href={tel}>{contact.phone}</a>}
           {footer?.contactEmail && <a href={`mailto:${footer.contactEmail}`}>{footer.contactEmail}</a>}
         </div>
         <p className="at-footer-line" data-tina-field={tinaField(footer ?? undefined, "line")}>
