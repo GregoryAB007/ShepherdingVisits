@@ -5,6 +5,7 @@ import {
   Cormorant_Garamond,
   Montserrat,
   Nunito,
+  Lora,
 } from "next/font/google";
 import "./globals.css";
 
@@ -26,6 +27,12 @@ const nunito = Nunito({
   weight: ["400", "600", "700", "800"],
   variable: "--font-round",
 });
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
+});
 
 export const metadata: Metadata = {
   title: "Shepherding Child Visits",
@@ -40,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} ${cormorant.variable} ${montserrat.variable} ${nunito.variable}`}
+      className={`${sora.variable} ${inter.variable} ${cormorant.variable} ${montserrat.variable} ${nunito.variable} ${lora.variable}`}
     >
       <body>{children}</body>
     </html>

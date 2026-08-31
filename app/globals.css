@@ -1,8 +1,9 @@
 /* ============================================================
-   Shepherding Child Visits — three switchable design systems
+   Shepherding Child Visits — switchable design systems
    1. Classic  (.d-classic) navy & amber, modern professional
    2. Atelier  (.d-atelier) cream & brown, elegant editorial
    3. Haven    (.d-haven)   sage & terracotta, warm & friendly
+   4. Juris    (.d-juris)   ivory & oxblood, stately legal print
    ============================================================ */
 
 * {
@@ -1396,6 +1397,436 @@ svg {
 @media (max-width: 700px) {
   .d-haven .hv-grid2,
   .d-haven .hv-grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   4. JURIS — ivory & oxblood, stately legal print
+   ============================================================ */
+
+.d-juris {
+  --paper: #fdfcf9;
+  --shade: #f4efe6;
+  --ink: #1c1a17;
+  --ink-soft: #57504a;
+  --oxblood: #7b2d26;
+  --gold: #b08d3e;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+.d-juris .jr-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 42px 20px 30px;
+}
+
+.d-juris .jr-brand {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.d-juris .jr-rule {
+  display: block;
+  width: 120px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  height: 4px;
+}
+
+.d-juris .jr-brand-sub {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.d-juris .jr-hero {
+  text-align: center;
+  padding: 56px 24px 40px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.d-juris .jr-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  margin-bottom: 18px;
+}
+
+.d-juris .jr-eyebrow.light {
+  color: #e8cfa0;
+}
+
+.d-juris .jr-display {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.d-juris .jr-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--oxblood);
+}
+
+.d-juris .jr-lede {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+.d-juris .jr-tagline {
+  font-style: italic;
+  color: var(--oxblood);
+  margin-bottom: 30px;
+}
+
+.d-juris .jr-btn-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.d-juris .jr-btn {
+  display: inline-block;
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--oxblood);
+  color: #fdf6ec;
+  padding: 14px 30px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.d-juris .jr-btn:hover {
+  background: #5e211b;
+}
+
+.d-juris .jr-btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.d-juris .jr-btn-outline:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.d-juris .jr-hero-art {
+  max-width: 460px;
+  margin: 44px auto 0;
+}
+
+.d-juris .jr-sec {
+  padding: 68px 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.d-juris .jr-sec-shaded {
+  max-width: none;
+  background: var(--shade);
+}
+
+.d-juris .jr-sec-shaded > * {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-juris .jr-sec-oxblood {
+  max-width: none;
+  background: var(--oxblood);
+  color: #f4ede2;
+  text-align: center;
+}
+
+.d-juris .jr-sec-oxblood > * {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-juris .jr-sec-oxblood .jr-body {
+  color: #eadfce;
+}
+
+.d-juris .jr-sec-oxblood svg {
+  margin-bottom: 16px;
+}
+
+.d-juris .jr-heading-block {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.d-juris .jr-heading-block::after {
+  content: "";
+  display: block;
+  width: 64px;
+  margin: 20px auto 0;
+  border-top: 1px solid var(--gold);
+}
+
+.d-juris .jr-h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.d-juris .jr-sec-oxblood .jr-h2 {
+  color: #fdf6ec;
+  font-style: italic;
+}
+
+.d-juris .jr-body {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.d-juris .jr-note {
+  font-style: italic;
+  color: var(--oxblood);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.d-juris .jr-cols3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.d-juris .jr-principle {
+  text-align: center;
+}
+
+.d-juris .jr-roman {
+  display: block;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.d-juris .jr-smallcaps {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.d-juris .jr-ruled {
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  color: var(--oxblood);
+}
+
+.d-juris .jr-serve-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px auto 0;
+  max-width: 520px;
+}
+
+.d-juris .jr-serve-list li {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.05rem;
+  padding: 10px 0;
+  border-bottom: 1px dotted rgba(176, 141, 62, 0.5);
+}
+
+.d-juris .jr-serve-list li:last-child {
+  border-bottom: none;
+}
+
+.d-juris .jr-values {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 20px;
+}
+
+.d-juris .jr-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0;
+  counter-reset: jr-service;
+}
+
+.d-juris .jr-service {
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(28, 26, 23, 0.12);
+}
+
+.d-juris .jr-service:last-child {
+  border-bottom: none;
+}
+
+.d-juris .jr-service-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.d-juris .jr-service-head .jr-smallcaps {
+  margin-bottom: 0;
+}
+
+.d-juris .jr-service-tagline {
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.95rem;
+}
+
+.d-juris .jr-journey {
+  max-width: 620px;
+  margin: 36px auto;
+}
+
+.d-juris .jr-steps {
+  margin-top: 8px;
+}
+
+.d-juris .jr-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px dotted rgba(176, 141, 62, 0.5);
+}
+
+.d-juris .jr-step:last-child {
+  border-bottom: none;
+}
+
+.d-juris .jr-cred-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px 40px;
+  margin-top: 36px;
+}
+
+.d-juris .jr-mantra {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #e8cfa0;
+  margin-top: 20px;
+}
+
+.d-juris .jr-region {
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.d-juris .jr-cols2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 56px;
+}
+
+.d-juris .jr-lead-line {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.d-juris .jr-list-line {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--oxblood);
+  margin-bottom: 10px;
+}
+
+.d-juris .jr-cta {
+  text-align: center;
+}
+
+.d-juris .jr-cta .jr-btn-row {
+  margin-top: 24px;
+}
+
+.d-juris .jr-footer {
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-top: 1px solid rgba(176, 141, 62, 0.4);
+}
+
+.d-juris .jr-footer .jr-rule {
+  margin: 0 auto 20px;
+}
+
+.d-juris .jr-footer .jr-brand {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.d-juris .jr-footer-tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.d-juris .jr-footer-links {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.d-juris .jr-footer-links a {
+  color: var(--oxblood);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(123, 45, 38, 0.35);
+  padding-bottom: 2px;
+}
+
+.d-juris .jr-footer-links a:hover {
+  border-bottom-color: var(--oxblood);
+}
+
+.d-juris .jr-footer-line {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 760px) {
+  .d-juris .jr-cols3,
+  .d-juris .jr-cols2,
+  .d-juris .jr-cred-grid {
     grid-template-columns: 1fr;
   }
 }
