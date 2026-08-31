@@ -1,16 +1,9 @@
-/* ---- design tokens: retheme the whole site here ---- */
-:root {
-  --ink: #14213d;        /* deep navy text */
-  --ink-soft: #4a5573;   /* secondary text */
-  --paper: #ffffff;      /* page background */
-  --panel: #eef1f7;      /* section background */
-  --accent: #fca311;     /* buttons & highlights */
-  --accent-ink: #1a1608; /* text on accent */
-  --line: #d8dde8;
-
-  --radius: 14px;
-  --max-width: 1040px;
-}
+/* ============================================================
+   Shepherding Child Visits — three switchable design systems
+   1. Classic  (.d-classic) navy & amber, modern professional
+   2. Atelier  (.d-atelier) cream & brown, elegant editorial
+   3. Haven    (.d-haven)   sage & terracotta, warm & friendly
+   ============================================================ */
 
 * {
   box-sizing: border-box;
@@ -23,176 +16,1386 @@ html {
 
 body {
   font-family: var(--font-body), system-ui, sans-serif;
-  color: var(--ink);
-  background: var(--paper);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-display), system-ui, sans-serif;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+img,
+svg {
+  max-width: 100%;
 }
 
-.container {
-  max-width: var(--max-width);
+/* ---- design switcher tabs ---- */
+.design-switcher {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #101418;
+  color: #cfd6dd;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.design-switcher-label {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: #8b949e;
+}
+
+.ds-tab {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid #3a434d;
+  border-radius: 999px;
+  padding: 5px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ds-tab:hover {
+  border-color: #8b949e;
+  color: #fff;
+}
+
+.ds-tab-active {
+  background: #fff;
+  border-color: #fff;
+  color: #101418;
+  font-weight: 600;
+}
+
+.design-switcher-hint {
+  margin-left: auto;
+  color: #8b949e;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 700px) {
+  .design-switcher-hint {
+    display: none;
+  }
+}
+
+/* ============================================================
+   1. CLASSIC — navy & amber
+   ============================================================ */
+
+.d-classic {
+  --ink: #14213d;
+  --ink-soft: #4a5573;
+  --paper: #ffffff;
+  --panel: #eef1f7;
+  --dark: #14213d;
+  --accent: #fca311;
+  --accent-ink: #1a1608;
+  --line: #d8dde8;
+  --radius: 14px;
+
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.d-classic .wrap {
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ---- hero ---- */
-.hero {
-  padding: 96px 0 72px;
+.d-classic h1,
+.d-classic h2,
+.d-classic h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.eyebrow {
+.d-classic h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  margin-bottom: 16px;
+}
+
+.d-classic h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.d-classic .dz-header {
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 2;
+}
+
+.d-classic .dz-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.d-classic .brand {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.d-classic .eyebrow {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 14px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
-.hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  max-width: 16ch;
+.d-classic .hero {
+  padding: 80px 0 64px;
+}
+
+.d-classic .hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.d-classic .h-display {
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 20px;
 }
 
-.hero p {
-  font-size: 1.15rem;
-  color: var(--ink-soft);
-  max-width: 54ch;
-  margin-bottom: 32px;
+.d-classic .h-display .accent {
+  color: var(--accent);
+  font-style: normal;
+  border-bottom: 5px solid var(--accent);
 }
 
-.buy-button {
+.d-classic .lede {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin-bottom: 28px;
+}
+
+.d-classic .btn-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.d-classic .center-row {
+  justify-content: center;
+}
+
+.d-classic .btn {
   display: inline-block;
   font-family: var(--font-display), sans-serif;
   font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--accent-ink);
+  font-size: 0.95rem;
   background: var(--accent);
-  border-radius: var(--radius);
-  padding: 16px 32px;
+  color: var(--accent-ink);
+  border-radius: 10px;
+  padding: 13px 26px;
   text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.buy-button:hover {
+.d-classic .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(252, 163, 17, 0.35);
+  box-shadow: 0 8px 20px rgba(20, 33, 61, 0.18);
 }
 
-.buy-button:focus-visible {
-  outline: 3px solid var(--ink);
-  outline-offset: 3px;
-}
-
-.price-note {
+.d-classic .btn-sm {
+  padding: 9px 18px;
   font-size: 0.85rem;
-  color: var(--ink-soft);
-  margin-top: 14px;
 }
 
-/* ---- features ---- */
-.features {
-  background: var(--panel);
+.d-classic .btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+
+.d-classic .sec-dark .btn-ghost,
+.d-classic .sec-accent .btn-ghost {
+  color: inherit;
+  border-color: currentColor;
+}
+
+.d-classic .btn-inverse {
+  background: var(--ink);
+  color: #fff;
+}
+
+.d-classic .tagline {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.d-classic .sec {
   padding: 72px 0;
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.d-classic .sec-alt {
+  background: var(--panel);
 }
 
-.feature-card {
-  background: var(--paper);
+.d-classic .sec-dark {
+  background: var(--dark);
+  color: #e8ecf5;
+}
+
+.d-classic .sec-dark h2,
+.d-classic .sec-dark h3 {
+  color: #fff;
+}
+
+.d-classic .sec-dark .eyebrow {
+  color: var(--accent);
+}
+
+.d-classic .sec-accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.d-classic .sec-accent .eyebrow {
+  color: var(--accent-ink);
+  opacity: 0.7;
+}
+
+.d-classic .narrow {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-classic .center {
+  text-align: center;
+}
+
+.d-classic .note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.d-classic .grid2,
+.d-classic .grid3,
+.d-classic .grid4 {
+  display: grid;
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.d-classic .grid2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.d-classic .grid3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.d-classic .grid4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.d-classic .card {
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 26px;
 }
 
-.feature-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-}
-
-.feature-card p {
+.d-classic .card p {
   color: var(--ink-soft);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
-/* ---- pricing ---- */
-.pricing {
-  padding: 88px 0;
+.d-classic .card svg {
+  margin-bottom: 14px;
 }
 
-.pricing-card {
-  max-width: 460px;
-  margin: 0 auto;
-  text-align: center;
-  border: 2px solid var(--ink);
-  border-radius: calc(var(--radius) + 6px);
-  padding: 44px 36px;
+.d-classic .card-dark {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
-.pricing-card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 18px;
+.d-classic .card-dark p {
+  color: #c3ccdd;
 }
 
-.price {
-  font-family: var(--font-display), sans-serif;
-  font-size: 3.2rem;
+.d-classic .card-tagline {
+  font-weight: 600;
+  color: var(--accent) !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.d-classic .card-badge {
+  border-top: 4px solid var(--accent);
+}
+
+.d-classic .check-grid {
+  list-style: none;
+  padding: 0;
+  margin: 36px auto 0;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+}
+
+.d-classic .check-grid li {
+  padding-left: 30px;
+  position: relative;
+}
+
+.d-classic .check-grid li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
   font-weight: 700;
 }
 
-.price-unit {
-  color: var(--ink-soft);
-  margin-left: 6px;
+.d-classic .journey {
+  max-width: 640px;
+  margin: 36px auto 8px;
 }
 
-.pricing-card p {
-  color: var(--ink-soft);
-  margin: 18px 0 28px;
+.d-classic .step {
+  padding: 20px;
 }
 
-/* ---- footer ---- */
-footer {
-  border-top: 1px solid var(--line);
-  padding: 36px 0;
+.d-classic .step-num {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 50%;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.d-classic .step p {
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.d-classic .plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.d-classic .plain-list li {
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.95rem;
+}
+
+.d-classic .small {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.d-classic .chips {
   display: flex;
-}
-
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
   flex-wrap: wrap;
-  width: 100%;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-footer a {
-  color: inherit;
+.d-classic .chip {
+  font-size: 0.75rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+.d-classic .logistics h3 {
+  margin: 8px 0 10px;
+}
+
+.d-classic .region-art {
+  max-width: 720px;
+  margin: 0 auto 12px;
+}
+
+.d-classic .mantra {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.d-classic .footer {
+  background: #0d1526;
+  color: #aab4c8;
+  padding: 48px 0;
+  font-size: 0.9rem;
+}
+
+.d-classic .footer .brand {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.d-classic .footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.d-classic .footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.d-classic .footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .d-classic .grid4 {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .buy-button {
-    transition: none;
+  .d-classic .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .d-classic .grid2,
+  .d-classic .grid3,
+  .d-classic .grid4 {
+    grid-template-columns: 1fr;
+  }
+  .d-classic .check-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   2. ATELIER — cream & brown editorial
+   ============================================================ */
+
+.d-atelier {
+  --cream: #f7ede1;
+  --parchment: #ebe7e0;
+  --mist: #f5f5f2;
+  --brown: #3b2e28;
+  --taupe: #605d51;
+  --gold: #b98d5e;
+  --cream-text: #fffff9;
+
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-sans-elegant), "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.d-atelier .at-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 30px 20px 26px;
+  border-bottom: 1px solid rgba(59, 46, 40, 0.15);
+}
+
+.d-atelier .at-brand {
+  font-family: var(--font-serif), serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.d-atelier .at-brand.light {
+  color: var(--cream-text);
+}
+
+.d-atelier .at-brand-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+/* hero */
+.d-atelier .at-hero {
+  background: var(--brown);
+  color: var(--cream-text);
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 24px;
+}
+
+.d-atelier .at-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 22px;
+}
+
+.d-atelier .at-eyebrow.light {
+  color: rgba(255, 255, 249, 0.75);
+}
+
+.d-atelier .at-display {
+  font-family: var(--font-serif), serif;
+  font-weight: 300;
+  line-height: 1.12;
+  margin-bottom: 26px;
+}
+
+.d-atelier .at-display .at-caps {
+  display: block;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.d-atelier .at-display em {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(3rem, 8.5vw, 6rem);
+  letter-spacing: 0.01em;
+}
+
+.d-atelier .at-hero-tagline {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  max-width: 46ch;
+  opacity: 0.9;
+  margin-bottom: 38px;
+}
+
+.d-atelier .at-btn-row {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.d-atelier .at-btn {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brown);
+  border: 1px solid var(--brown);
+  padding: 15px 34px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: transparent;
+}
+
+.d-atelier .at-btn:hover {
+  background: var(--brown);
+  color: var(--cream-text);
+}
+
+.d-atelier .at-btn.light {
+  color: var(--cream-text);
+  border-color: var(--cream-text);
+}
+
+.d-atelier .at-btn.light:hover {
+  background: var(--cream-text);
+  color: var(--brown);
+}
+
+/* sections */
+.d-atelier .at-sec {
+  padding: 96px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.d-atelier .at-sec-panel {
+  background: var(--parchment);
+  max-width: none;
+}
+
+.d-atelier .at-sec-panel > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-atelier .at-sec-dark {
+  background: var(--brown);
+  color: var(--cream-text);
+  max-width: none;
+}
+
+.d-atelier .at-sec-dark > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-atelier .at-mission {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  font-weight: 300;
+  line-height: 1.65;
+  text-align: center;
+  max-width: 46em;
+  margin: 0 auto;
+}
+
+.d-atelier .at-h2 {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.d-atelier .at-h2.italic {
+  font-style: italic;
+}
+
+.d-atelier .at-h3 {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 8px 0 12px;
+}
+
+.d-atelier .at-body {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.d-atelier .at-note {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+
+.d-atelier .at-sec-dark .at-note {
+  color: var(--cream-text);
+}
+
+.d-atelier .at-center {
+  text-align: center;
+}
+
+.d-atelier .at-narrow {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-atelier .at-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.d-atelier .at-art {
+  padding: 20px;
+}
+
+.d-atelier .at-cols3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 56px;
+}
+
+.d-atelier .at-cols3 .at-col {
+  padding: 10px 34px;
+  border-left: 1px solid rgba(59, 46, 40, 0.18);
+  text-align: center;
+}
+
+.d-atelier .at-cols3 .at-col:first-child {
+  border-left: none;
+}
+
+.d-atelier .at-credentials {
+  row-gap: 44px;
+}
+
+.d-atelier .at-credentials .at-col:nth-child(4) {
+  border-left: none;
+}
+
+.d-atelier .at-cols2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  margin-top: 40px;
+}
+
+.d-atelier .at-caps-sm {
+  font-family: var(--font-sans-elegant), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.d-atelier .at-values {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 18px;
+}
+
+.d-atelier .at-service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(59, 46, 40, 0.14);
+  border: 1px solid rgba(59, 46, 40, 0.14);
+  margin-top: 60px;
+}
+
+.d-atelier .at-service {
+  background: var(--cream);
+  padding: 36px 28px;
+}
+
+.d-atelier .at-service-tagline {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.d-atelier .at-serve-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.d-atelier .at-serve-list li {
+  font-family: var(--font-serif), serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 249, 0.18);
+}
+
+.d-atelier .at-serve-list li:last-child {
+  border-bottom: none;
+}
+
+.d-atelier .at-journey {
+  max-width: 620px;
+  margin: 48px auto;
+}
+
+.d-atelier .at-steps {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.d-atelier .at-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(59, 46, 40, 0.16);
+}
+
+.d-atelier .at-step:last-child {
+  border-bottom: none;
+}
+
+.d-atelier .at-step-num {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 2.4rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.d-atelier .at-center-block {
+  text-align: center;
+  display: block;
+}
+
+.d-atelier .at-mantra {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-top: 24px;
+}
+
+.d-atelier .at-sec-dark svg {
+  margin-bottom: 18px;
+}
+
+.d-atelier .at-region {
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.d-atelier .at-list-line {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--taupe);
+  margin-bottom: 12px;
+}
+
+.d-atelier .at-footer {
+  background: var(--brown);
+  color: var(--cream-text);
+  text-align: center;
+  padding: 72px 24px 48px;
+}
+
+.d-atelier .at-footer-tagline {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 14px 0 24px;
+  opacity: 0.9;
+}
+
+.d-atelier .at-footer-links {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.d-atelier .at-footer-links a {
+  color: var(--cream-text);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 249, 0.4);
+  padding-bottom: 3px;
+}
+
+.d-atelier .at-footer-links a:hover {
+  border-bottom-color: var(--cream-text);
+}
+
+.d-atelier .at-footer-line {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  opacity: 0.6;
+}
+
+@media (max-width: 960px) {
+  .d-atelier .at-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .d-atelier .at-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .d-atelier .at-sec {
+    padding: 64px 20px;
+  }
+  .d-atelier .at-cols3,
+  .d-atelier .at-cols2,
+  .d-atelier .at-service-grid {
+    grid-template-columns: 1fr;
+  }
+  .d-atelier .at-cols3 .at-col {
+    border-left: none;
+    border-top: 1px solid rgba(59, 46, 40, 0.18);
+    padding: 24px 10px;
+  }
+  .d-atelier .at-cols3 .at-col:first-child {
+    border-top: none;
+  }
+}
+
+/* ============================================================
+   3. HAVEN — sage & terracotta
+   ============================================================ */
+
+.d-haven {
+  --sage-bg: #f4f7f0;
+  --sage-tint: #e6efe0;
+  --deep: #2f4f3e;
+  --deep-soft: #5c7268;
+  --terra: #e07a5f;
+  --sun: #f2cc8f;
+  --card: #ffffff;
+  --r-lg: 28px;
+  --r-md: 18px;
+
+  background: var(--sage-bg);
+  color: var(--deep);
+  font-family: var(--font-round), "Nunito", system-ui, sans-serif;
+}
+
+.d-haven .hv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 18px 24px;
+}
+
+.d-haven .hv-brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.d-haven .hv-hero {
+  padding: 56px 24px 72px;
+}
+
+.d-haven .hv-hero-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.d-haven .hv-pill {
+  display: inline-block;
+  background: var(--sage-tint);
+  color: var(--deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 18px;
+}
+
+.d-haven .hv-pill-accent {
+  background: rgba(224, 122, 95, 0.15);
+  color: var(--terra);
+}
+
+.d-haven .hv-pill-light {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.d-haven .hv-display {
+  font-size: clamp(2.4rem, 5.6vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.d-haven .hv-accent {
+  color: var(--terra);
+  position: relative;
+}
+
+.d-haven .hv-lede {
+  font-size: 1.08rem;
+  color: var(--deep-soft);
+  max-width: 54ch;
+  margin-bottom: 26px;
+}
+
+.d-haven .hv-btn-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.d-haven .hv-btn-row.center {
+  justify-content: center;
+}
+
+.d-haven .hv-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  background: var(--terra);
+  color: #fff;
+  border-radius: 999px;
+  padding: 14px 28px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(224, 122, 95, 0.35);
+  transition: transform 0.12s ease;
+}
+
+.d-haven .hv-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.d-haven .hv-btn-sm {
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+
+.d-haven .hv-btn-ghost {
+  background: transparent;
+  color: var(--deep);
+  border: 2px solid var(--deep);
+  box-shadow: none;
+}
+
+.d-haven .hv-btn-light {
+  background: #fff;
+  color: var(--deep);
+  box-shadow: none;
+}
+
+.d-haven .hv-btn-ghost-light {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+}
+
+.d-haven .hv-tagline {
+  font-weight: 800;
+  color: var(--terra);
+}
+
+.d-haven .hv-blob {
+  background: radial-gradient(circle at 30% 30%, var(--sun) 0%, var(--sage-tint) 65%);
+  border-radius: 46% 54% 58% 42% / 48% 44% 56% 52%;
+  padding: 36px;
+}
+
+.d-haven .hv-sec {
+  padding: 64px 24px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.d-haven .hv-sec-tint {
+  background: var(--sage-tint);
+  max-width: none;
+}
+
+.d-haven .hv-sec-tint > * {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-haven .hv-sec-deep {
+  background: var(--deep);
+  color: #eef4ee;
+  max-width: none;
+  text-align: center;
+}
+
+.d-haven .hv-sec-deep > * {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-haven .hv-sec-deep h2 {
+  color: #fff;
+}
+
+.d-haven .hv-h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.d-haven .hv-h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.d-haven .hv-center {
+  text-align: center;
+}
+
+.d-haven .hv-narrow {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-haven .hv-note {
+  font-style: italic;
+  color: var(--deep-soft);
+  margin-top: 12px;
+}
+
+.d-haven .hv-card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(47, 79, 62, 0.08);
+}
+
+.d-haven .hv-card p {
+  color: var(--deep-soft);
+  font-size: 0.95rem;
+}
+
+.d-haven .hv-card-wide {
+  text-align: center;
+  padding: 44px;
+}
+
+.d-haven .hv-card-wide p {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+.d-haven .hv-tilt-0 { transform: rotate(-1deg); }
+.d-haven .hv-tilt-1 { transform: rotate(0.6deg); }
+.d-haven .hv-tilt-2 { transform: rotate(-0.6deg); }
+
+.d-haven .hv-icon-ring {
+  display: inline-flex;
+  padding: 14px;
+  background: var(--sage-tint);
+  border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+.d-haven .hv-grid2,
+.d-haven .hv-grid3 {
+  display: grid;
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.d-haven .hv-grid2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.d-haven .hv-grid3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.d-haven .hv-chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 860px;
+  margin: 32px auto 0;
+}
+
+.d-haven .hv-chip-cloud.left {
+  justify-content: flex-start;
+  margin: 12px 0;
+}
+
+.d-haven .hv-chip {
+  background: #fff;
+  border: 2px solid var(--sage-tint);
+  color: var(--deep);
+  font-weight: 700;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+.d-haven .hv-sec-tint .hv-chip {
+  border-color: #fff;
+}
+
+.d-haven .hv-values {
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-top: 14px;
+}
+
+.d-haven .hv-service-tagline {
+  font-weight: 800;
+  color: var(--terra) !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.d-haven .hv-journey {
+  max-width: 640px;
+  margin: 36px auto 6px;
+}
+
+.d-haven .hv-step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.d-haven .hv-step-num {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: var(--sun);
+  color: var(--deep);
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.d-haven .hv-center-block {
+  display: block;
+  text-align: center;
+}
+
+.d-haven .hv-badge {
+  border-bottom: 5px solid var(--sun);
+}
+
+.d-haven .hv-mantra {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  font-weight: 800;
+  color: var(--sun);
+}
+
+.d-haven .hv-sec-deep svg {
+  margin-bottom: 16px;
+}
+
+.d-haven .hv-region {
+  max-width: 720px;
+  margin: 0 auto 8px;
+}
+
+.d-haven .hv-small {
+  font-size: 0.85rem;
+  color: var(--deep-soft);
+}
+
+.d-haven .hv-cta-band {
+  background: linear-gradient(135deg, var(--deep) 0%, #3f6a53 100%);
+  color: #eef4ee;
+  border-radius: var(--r-lg);
+  text-align: center;
+  padding: 56px 32px;
+}
+
+.d-haven .hv-cta-band h2 {
+  color: #fff;
+}
+
+.d-haven .hv-cta-band p {
+  max-width: 60ch;
+  margin: 0 auto 24px;
+}
+
+.d-haven .hv-footer {
+  background: var(--sage-tint);
+  text-align: center;
+  padding: 48px 24px;
+  font-size: 0.92rem;
+  color: var(--deep-soft);
+}
+
+.d-haven .hv-footer .hv-brand {
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.d-haven .hv-footer-links {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.d-haven .hv-footer-links a {
+  color: var(--terra);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.d-haven .hv-footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .d-haven .hv-hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .d-haven .hv-grid2,
+  .d-haven .hv-grid3 {
+    grid-template-columns: 1fr;
   }
 }

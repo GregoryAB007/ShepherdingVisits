@@ -1,104 +1,81 @@
 "use client";
 
-import { useTina, tinaField } from "tinacms/dist/react";
-import type { PageQuery } from "../tina/__generated__/types";
+import { useEffect, useState } from "react";
+import { useTina } from "tinacms/dist/react";
+import type { Page } from "../tina/__generated__/types";
+import ClassicDesign from "./designs/Classic";
+import AtelierDesign from "./designs/Atelier";
+import HavenDesign from "./designs/Haven";
+import type { DesignProps } from "./designs/types";
 
 type Props = {
-  data: PageQuery;
+  data: { page: Page };
   query: string;
   variables: { relativePath: string };
 };
+
+const DESIGNS: {
+  id: string;
+  label: string;
+  hint: string;
+  Component: (props: DesignProps) => React.ReactNode;
+}[] = [
+  { id: "classic", label: "Classic", hint: "Navy & amber — modern professional", Component: ClassicDesign },
+  { id: "atelier", label: "Atelier", hint: "Cream & brown — elegant editorial", Component: AtelierDesign },
+  { id: "haven", label: "Haven", hint: "Sage & terracotta — warm & friendly", Component: HavenDesign },
+];
+
+const STORAGE_KEY = "scv-design";
 
 export default function LandingPage(props: Props) {
   // useTina makes the page live-update while an editor works in /admin.
   // In production for visitors it just returns the static data.
   const { data } = useTina(props);
   const page = data.page;
-  const { hero, features, pricing, footer } = page;
 
-  const paymentLink =
-    hero?.stripePaymentLink && hero.stripePaymentLink.startsWith("https://")
-      ? hero.stripePaymentLink
-      : "#";
+  const [active, setActive] = useState(DESIGNS[0].id);
+
+  // Restore the last-viewed design after mount (avoids a hydration mismatch).
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved && DESIGNS.some((d) => d.id === saved)) setActive(saved);
+    } catch {
+      /* private mode etc. — keep the default */
+    }
+  }, []);
+
+  const select = (id: string) => {
+    setActive(id);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, id);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const design = DESIGNS.find((d) => d.id === active) ?? DESIGNS[0];
+  const Design = design.Component;
 
   return (
     <main>
-      <section className="hero">
-        <div className="container">
-          {hero?.eyebrow && (
-            <span className="eyebrow" data-tina-field={tinaField(hero, "eyebrow")}>
-              {hero.eyebrow}
-            </span>
-          )}
-          <h1 data-tina-field={tinaField(hero, "headline")}>{hero?.headline}</h1>
-          <p data-tina-field={tinaField(hero, "subheadline")}>
-            {hero?.subheadline}
-          </p>
-          <a
-            className="buy-button"
-            href={paymentLink}
-            data-tina-field={tinaField(hero, "ctaLabel")}
+      <div className="design-switcher" role="tablist" aria-label="Choose a design">
+        <span className="design-switcher-label">Design preview:</span>
+        {DESIGNS.map((d) => (
+          <button
+            key={d.id}
+            role="tab"
+            aria-selected={d.id === active}
+            className={d.id === active ? "ds-tab ds-tab-active" : "ds-tab"}
+            title={d.hint}
+            onClick={() => select(d.id)}
           >
-            {hero?.ctaLabel ?? "Buy now"}
-          </a>
-          {hero?.priceNote && (
-            <p className="price-note" data-tina-field={tinaField(hero, "priceNote")}>
-              {hero.priceNote}
-            </p>
-          )}
-        </div>
-      </section>
-
-      {features && features.length > 0 && (
-        <section className="features">
-          <div className="container">
-            <div className="feature-grid">
-              {features.map(
-                (feature, i) =>
-                  feature && (
-                    <div
-                      className="feature-card"
-                      key={i}
-                      data-tina-field={tinaField(feature)}
-                    >
-                      <h3>{feature.title}</h3>
-                      <p>{feature.description}</p>
-                    </div>
-                  )
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {pricing && (
-        <section className="pricing">
-          <div className="container">
-            <div className="pricing-card" data-tina-field={tinaField(pricing)}>
-              <h2>{pricing.title}</h2>
-              <div>
-                <span className="price">{pricing.price}</span>
-                <span className="price-unit">{pricing.unit}</span>
-              </div>
-              <p>{pricing.description}</p>
-              <a className="buy-button" href={paymentLink}>
-                {pricing.ctaLabel ?? "Buy now"}
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
-
-      <footer>
-        <div className="container">
-          <span data-tina-field={tinaField(footer ?? undefined, "line")}>
-            {footer?.line}
-          </span>
-          {footer?.contactEmail && (
-            <a href={`mailto:${footer.contactEmail}`}>{footer.contactEmail}</a>
-          )}
-        </div>
-      </footer>
+            {d.label}
+          </button>
+        ))}
+        <span className="design-switcher-hint">{design.hint}</span>
+      </div>
+      <Design page={page} />
     </main>
   );
 }

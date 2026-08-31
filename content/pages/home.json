@@ -1,14 +1,248 @@
 {
   "seo": {
-    "title": "Fieldnotes — the weekly planning kit",
-    "description": "A printable planning kit that turns a scattered week into one calm page. Instant download, lifetime updates."
+    "title": "Shepherding Child Visits | Professional Supervised Visitation",
+    "description": "Professional supervised visitation and monitored exchange services throughout Southern California. Safe Connections. Professional Care. Peace of Mind."
+  },
+  "brand": {
+    "name": "Shepherding Child Visits",
+    "tagline": "Watchful Care for what Matters Most"
   },
   "hero": {
-    "eyebrow": "Coming Soon.",
-    "headline": "MORE THAN A VISIT",
-    "subheadline": "We Understand What's Really At Stake. At Shepherding Child Visits, we believe in the highest quality professionals. Our team brings together more than 15 years of combined experience supporting children and families in a variety of professional settings. This experience allows us to understand that every child, every parent, and every family situation is unique. Our approach is built around three guiding principles: Safety. Professionalism. Respect."
+    "eyebrow": "Professional Supervised Visitation & Monitored Exchanges",
+    "headline": "More Than",
+    "headlineAccent": "a Visit",
+    "subheadline": "When families are navigating supervised visitation, having a professional you can trust matters. At Shepherding Child Visits, we provide safe, structured, and professionally supervised visitation and monitored exchange services designed to protect the well-being of children while supporting a stress-free parent-child relationship.",
+    "tagline": "Your family deserves professionalism. Your child deserves safety. Every visit deserves respect.",
+    "primaryCta": "Schedule a Consultation",
+    "secondaryCta": "Learn About Our Services"
   },
+  "intro": {
+    "eyebrow": "Our Approach",
+    "heading": "A Professional Approach to Supervised Visitation",
+    "body": "We understand that supervised visitation can be an emotional and challenging experience for families. Our purpose is to make the process as comfortable, respectful, and professional as possible. Our professional monitors maintain a calm, structured, and conflict-free environment where children can safely spend time with their parents and loved ones. We remain impartial and neutral throughout the visitation process, allowing our focus to remain where it belongs: the safety and well-being of the child.",
+    "note": "Our services are provided with integrity and in accordance with applicable court orders, professional standards, and established visitation protocols."
+  },
+  "principles": {
+    "eyebrow": "Safety. Neutrality. Confidentiality.",
+    "heading": "Three principles guide everything we do.",
+    "items": [
+      {
+        "title": "Safety",
+        "description": "Your child's safety and well-being are our highest priorities. We maintain a structured environment designed to support safe and appropriate visitation."
+      },
+      {
+        "title": "Neutrality",
+        "description": "We do not take sides. Our monitors remain professional, impartial, and objective throughout every visit."
+      },
+      {
+        "title": "Confidentiality",
+        "description": "We respect the privacy and sensitive nature of every family's circumstances and handle information with the highest level of professionalism and discretion."
+      }
+    ]
+  },
+  "audiences": [
+    {
+      "eyebrow": "For Custodial Parents",
+      "heading": "Confidence in Every Visit.",
+      "body": "You can feel confident knowing that your child's safety and well-being remain our highest priorities. We provide a structured and professionally monitored environment where parenting time can occur safely and appropriately. Our monitors follow established protocols while treating your family with respect and dignity.",
+      "tagline": "Your child's safety comes first."
+    },
+    {
+      "eyebrow": "For Non-Custodial Parents",
+      "heading": "Focus on What Matters Most.",
+      "body": "We understand that supervised parenting time may feel unfamiliar or stressful. Our goal is to provide a professional and welcoming environment where you can focus on spending meaningful time with your child without feeling judged. Our monitors remain neutral, respectful, and professional so that you can focus on creating stress-free experiences and strengthening your relationship with your child.",
+      "tagline": "Your time with your child matters."
+    }
+  ],
+  "serve": {
+    "eyebrow": "Supporting Families & Professionals",
+    "heading": "A Trusted Partner for the Professionals Who Serve Families.",
+    "body": "Shepherding Child Visits works with parents and the professionals involved in supporting children and families. We provide a safe, structured, and professionally supervised setting where court-ordered parenting time and monitored exchanges can take place with confidence and care.",
+    "items": [
+      "Parents and legal guardians",
+      "Attorneys and family law professionals",
+      "Foster caregivers",
+      "Social workers",
+      "Child welfare professionals",
+      "Other authorized professionals involved in court-ordered visitation"
+    ]
+  },
+  "services": {
+    "eyebrow": "Our Services",
+    "heading": "Professional Supervised Visitation & Monitoring Services",
+    "body": "Our monitors serve as neutral third parties whose responsibility is to observe and supervise parent-child contact while maintaining a safe, structured, and professional environment. We do not take sides, make custody determinations, or act as advocates for either parent. Our focus remains on the child.",
+    "note": "Safety • Neutrality • Confidentiality • Professionalism • Respect",
+    "items": [
+      {
+        "title": "Off-Site Supervised Visits",
+        "tagline": "Safe & Meaningful Parent-Child Time",
+        "description": "Professional supervision of visits between a non-custodial parent and child in a mutually agreed-upon safe and appropriate location. As a neutral third party, our monitor observes and supervises parent-child interactions while helping ensure the visit takes place in accordance with applicable court orders and visitation requirements."
+      },
+      {
+        "title": "On-Site Supervised Visits",
+        "tagline": "Comfortable, Approved Settings",
+        "description": "When permitted by the court order, visits may take place at an approved location, including a home setting. Our agency will review the setting to ensure it provides a safe, comfortable, and appropriate environment for the child and all parties involved."
+      },
+      {
+        "title": "Supervised Exchanges",
+        "tagline": "Safe, Neutral Transitions",
+        "description": "We supervise the transfer of a child from one parent to the other while taking appropriate precautions to minimize or prevent contact between the parents, when required. Our monitors facilitate the exchange in a professional and neutral manner, creating a calm and structured transition for the child."
+      },
+      {
+        "title": "Telephone & Virtual Visits",
+        "tagline": "Staying Connected",
+        "description": "When an in-person visit is not possible or when virtual contact is appropriate, we provide supervised telephone and video visitation through three-way calling or approved video platforms, allowing parents and children to maintain contact when circumstances require an alternative to in-person visitation."
+      },
+      {
+        "title": "Written Reports",
+        "tagline": "Impartial Documentation",
+        "description": "Our professional monitors maintain impartial documentation of supervised visits. Depending on the needs of the case, available documentation may include Visit Summary Reports, Detailed Observation Reports, Incident Reports, and Declaration Reports — prepared unbiasedly and limited to observations within the scope of the monitor's role."
+      },
+      {
+        "title": "Court Testimony",
+        "tagline": "Professional & Impartial",
+        "description": "When requested or required by the court or an attorney, a professional monitor may be available to appear in court and provide testimony regarding observations made during supervised visitation, limited to the monitor's direct observations and professional responsibilities."
+      },
+      {
+        "title": "Child Transportation",
+        "tagline": "Supporting Safe Visitation Arrangements",
+        "description": "When appropriate and authorized, we may provide transportation of children to and from supervised visitation with a non-custodial parent, coordinated according to applicable court orders, safety requirements, and the circumstances of the individual case."
+      },
+      {
+        "title": "Out-of-State & Overnight Visits",
+        "tagline": "Extended Visitation Services",
+        "description": "When permitted by the applicable court order and appropriate for the circumstances, we may accommodate out-of-state and overnight supervised visitation. Because extended visits require additional planning and coordination, arrangements should be discussed with our office in advance."
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "How It Works",
+    "heading": "Simple. Professional. Child-Centered.",
+    "body": "We make the supervised visitation process as clear and straightforward as possible. From the first conversation to the completion of each visit, our focus remains on safety, professionalism, neutrality, and the well-being of the child.",
+    "items": [
+      {
+        "title": "Contact Us",
+        "description": "We begin with a conversation to understand your visitation needs. We review the applicable court order, visitation requirements, scheduling needs, location, and any special circumstances, and discuss our services, availability, and applicable fees."
+      },
+      {
+        "title": "Intake & Preparation",
+        "description": "Each parent completes a separate intake process so we can establish clear expectations and understand the needs of the child and family. Before visitation begins, we review required documents, visitation guidelines, safety considerations, scheduling, payment arrangements, and our professional service agreement."
+      },
+      {
+        "title": "Supervised Visit",
+        "description": "Our professional monitor supervises the visit in a safe, structured, and neutral environment. Parents and children focus on spending meaningful time together while our monitor remains attentive to the child's safety and well-being."
+      },
+      {
+        "title": "Observe & Document",
+        "description": "During the visit, our monitor observes the parent-child interaction and documents relevant information objectively, according to the requirements of the case. When applicable, reports are available upon request."
+      }
+    ],
+    "note": "Our professional monitors are trained in: Safety • Security • Supervision • Awareness • Child Development • Neutrality • De-escalation"
+  },
+  "team": {
+    "eyebrow": "Our Team",
+    "heading": "Experience You Can Trust",
+    "body": "Our team brings together more than 15 years of combined experience supporting children and families in a variety of professional settings — including foster parenting, professional supervised visitation, family law offices, professional childcare, and education. These varied experiences have given our team an understanding of the different developmental, emotional, and social needs of children at every stage. Our monitors approach each visit with patience, professionalism, neutrality, and respect, while keeping the child's safety and well-being at the center of everything we do.",
+    "credentials": [
+      {
+        "title": "CPR Certified & First Aid Trained",
+        "description": "Prepared to respond appropriately to safety and emergency situations."
+      },
+      {
+        "title": "English & Spanish Speaking",
+        "description": "Providing greater accessibility and communication for the families we serve."
+      },
+      {
+        "title": "California Standard 5.20 Trained",
+        "description": "Trained in accordance with applicable California requirements for professional supervised visitation."
+      },
+      {
+        "title": "Family Code § 3200.5 Trained",
+        "description": "Our team receives training consistent with applicable California requirements and professional standards."
+      },
+      {
+        "title": "Background Checked",
+        "description": "Our monitors undergo background checks in accordance with applicable California requirements and guidelines."
+      },
+      {
+        "title": "TrustLine Registered & Certified",
+        "description": "Registered and certified with TrustLine, California's childcare background-check registry, as applicable to their role."
+      }
+    ]
+  },
+  "director": {
+    "eyebrow": "Our Director",
+    "heading": "Experience That Brings Perspective",
+    "body": "Our agency director brings a diverse professional background in family law, education, and finance. This combination provides a unique perspective that brings together an understanding of the legal environment surrounding family matters, experience working with children and families, and strong organizational and administrative skills. Our leadership philosophy is simple: families deserve a professional service that takes its responsibility seriously while never losing sight of the human beings behind every visit."
+  },
+  "commitment": {
+    "eyebrow": "Our Commitment to Your Family",
+    "heading": "Every Family Deserves Respect.",
+    "body": "We recognize that families arrive at supervised visitation for many different reasons. Whatever the circumstances, we believe every person deserves to be treated with dignity. Our responsibility is to provide a professional environment where children can maintain safe and meaningful relationships with their parents and loved ones while established court requirements and visitation protocols are respected.",
+    "lines": ["We don't take sides.", "We don't judge.", "We focus on the child."]
+  },
+  "areas": {
+    "eyebrow": "Areas We Serve",
+    "heading": "Professional Visitation Services Throughout Southern California",
+    "body": "Our monitors travel throughout our service area to accommodate the individual needs of families and the requirements of applicable court orders. If you are unsure whether we serve your location, please contact us — we are happy to discuss your specific visitation needs.",
+    "items": ["Los Angeles County", "Orange County", "Riverside County", "San Bernardino County"]
+  },
+  "availability": {
+    "eyebrow": "Availability",
+    "heading": "Flexible Scheduling to Meet Your Needs",
+    "body": "We understand that families and court orders may require flexibility. Subject to monitor availability, we offer supervised visitation services during:",
+    "items": ["Weekdays", "Weekends", "Evenings", "Holidays", "Overnight visits", "Extended or vacation visitations"]
+  },
+  "locations": {
+    "eyebrow": "Visitation Locations",
+    "heading": "Flexible Locations. Safe Environments.",
+    "body": "Supervised visitation can take place in a variety of appropriate locations depending on the needs of the family, the child's best interests, monitor availability, and the applicable court order. We understand that meaningful parent-child time can happen in many different settings — when appropriate, families may participate in activities that reflect their interests, traditions, and individual family culture.",
+    "items": [
+      "Parks and outdoor recreational areas",
+      "Libraries",
+      "Beaches",
+      "Malls and shopping centers",
+      "Restaurants and cafés",
+      "Museums",
+      "Zoos and aquariums",
+      "Amusement parks and family entertainment venues",
+      "Movie theaters",
+      "Sporting events",
+      "Community centers",
+      "Private residences, when appropriate and authorized"
+    ]
+  },
+  "fees": {
+    "eyebrow": "Fees & Payment",
+    "heading": "Professional Services. Clear Communication.",
+    "body": "Our rates are consistent with industry standards, but the total cost of services may vary depending on the individual case — including the type and length of visitation, location, transportation needs, court requirements, and reports. Rather than providing a one-size-fits-all price online, we invite you to contact us for case-specific pricing based on your visitation needs. Applicable fees, including any premium rates for extended, holiday, or out-of-area visits, will be discussed before services are scheduled.",
+    "paymentNote": "For your convenience, we accept Zelle, credit cards, and debit cards. Payment for scheduled services is required in advance. Supervised visitation services are subject to a two-hour minimum, unless a court order specifies a shorter visitation period.",
+    "cancellationNote": "There is no cancellation fee when at least 24 hours' notice is provided. Cancellations made with less than 24 hours' notice may be subject to applicable fees."
+  },
+  "finalCta": {
+    "eyebrow": "Ready to Take the Next Step?",
+    "heading": "Professional Support for Your Family's Visitation Needs.",
+    "body": "Whether you are a parent, attorney, foster caregiver, or child welfare professional, Shepherding Child Visits is here to provide professional supervised visitation and monitored exchange services with integrity, neutrality, and care.",
+    "primaryCta": "Schedule a Consultation",
+    "secondaryCta": "Contact Our Team"
+  },
+  "contact": {
+    "phone": "",
+    "email": "info@shepherdingchildvisits.com"
+  },
+  "resources": [
+    {
+      "label": "2025 California Rules of Court — Standard 5.20",
+      "url": "https://courts.ca.gov/cms/rules/index.cfm?title=standards&linkid=standard5_20"
+    },
+    {
+      "label": "Parent Guidelines",
+      "url": "#"
+    }
+  ],
   "footer": {
-    "line": "Made with too much coffee and exactly one page."
+    "tagline": "Safe Connections. Professional Care. Peace of Mind.",
+    "line": "© Shepherding Child Visits. Serving Southern California families.",
+    "contactEmail": "info@shepherdingchildvisits.com"
   }
 }
