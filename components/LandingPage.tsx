@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTina } from "tinacms/dist/react";
 import type { Page } from "../tina/__generated__/types";
-import ClassicDesign from "./designs/Classic";
 import AtelierDesign from "./designs/Atelier";
-import HavenDesign from "./designs/Haven";
 import JurisDesign from "./designs/Juris";
 import type { DesignProps } from "./designs/types";
 
@@ -21,9 +19,7 @@ const DESIGNS: {
   hint: string;
   Component: (props: DesignProps) => React.ReactNode;
 }[] = [
-  { id: "classic", label: "Classic", hint: "Navy & amber — modern professional", Component: ClassicDesign },
   { id: "atelier", label: "Atelier", hint: "Cream & brown — elegant editorial", Component: AtelierDesign },
-  { id: "haven", label: "Haven", hint: "Sage & terracotta — warm & friendly", Component: HavenDesign },
   { id: "juris", label: "Juris", hint: "Ivory & oxblood — stately legal print", Component: JurisDesign },
 ];
 
