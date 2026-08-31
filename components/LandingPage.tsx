@@ -5,6 +5,7 @@ import { useTina } from "tinacms/dist/react";
 import type { Page } from "../tina/__generated__/types";
 import AtelierDesign from "./designs/Atelier";
 import JurisDesign from "./designs/Juris";
+import BlendDesign from "./designs/Blend";
 import type { DesignProps } from "./designs/types";
 
 type Props = {
@@ -21,6 +22,7 @@ const DESIGNS: {
 }[] = [
   { id: "atelier", label: "Atelier", hint: "Cream & brown — elegant editorial", Component: AtelierDesign },
   { id: "juris", label: "Juris", hint: "Ivory & oxblood — stately legal print", Component: JurisDesign },
+  { id: "blend", label: "Blend", hint: "Atelier layout — Juris text styles", Component: BlendDesign },
 ];
 
 const STORAGE_KEY = "scv-design";

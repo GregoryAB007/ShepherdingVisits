@@ -2,6 +2,7 @@
    Shepherding Child Visits — switchable design systems
    1. Atelier  (.d-atelier) cream & brown, elegant editorial
    2. Juris    (.d-juris)   ivory & oxblood, stately legal print
+   3. Blend    (.at-juris-text) Atelier layout, Juris text styles
    ============================================================ */
 
 * {
@@ -84,7 +85,7 @@ svg {
 }
 
 /* ============================================================
-   2. ATELIER — cream & brown editorial
+   1. ATELIER — cream & brown editorial
    ============================================================ */
 
 .d-atelier {
@@ -549,7 +550,7 @@ svg {
 }
 
 /* ============================================================
-   4. JURIS — ivory & oxblood, stately legal print
+   2. JURIS — ivory & oxblood, stately legal print
    ============================================================ */
 
 .d-juris {
@@ -976,4 +977,157 @@ svg {
   .d-juris .jr-cred-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   3. BLEND — Atelier layout, Juris text styles
+   Wraps the Atelier design (.at-juris-text) and restyles every
+   text element with Juris's type treatment: Lora serif, its
+   weights and letter-spacing, oxblood & gold text accents.
+   Backgrounds and layout stay Atelier's.
+   ============================================================ */
+
+.at-juris-text .d-atelier {
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 400;
+  color: #1c1a17;
+}
+
+/* every Atelier rule that pins a font-family gets Lora instead */
+.at-juris-text .d-atelier .at-brand,
+.at-juris-text .d-atelier .at-display,
+.at-juris-text .d-atelier .at-hero-tagline,
+.at-juris-text .d-atelier .at-mission,
+.at-juris-text .d-atelier .at-h2,
+.at-juris-text .d-atelier .at-h3,
+.at-juris-text .d-atelier .at-note,
+.at-juris-text .d-atelier .at-caps-sm,
+.at-juris-text .d-atelier .at-service-tagline,
+.at-juris-text .d-atelier .at-serve-list li,
+.at-juris-text .d-atelier .at-step-num,
+.at-juris-text .d-atelier .at-mantra,
+.at-juris-text .d-atelier .at-list-line {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+/* masthead — Juris brand treatment */
+.at-juris-text .d-atelier .at-brand {
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+.at-juris-text .d-atelier .at-brand-sub {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.95rem;
+  color: #57504a;
+}
+
+/* eyebrows — Juris small caps in oxblood */
+.at-juris-text .d-atelier .at-eyebrow {
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #7b2d26;
+}
+
+.at-juris-text .d-atelier .at-eyebrow.light {
+  color: #e8cfa0;
+}
+
+/* display & headings — Juris weight, upright */
+.at-juris-text .d-atelier .at-display {
+  font-weight: 500;
+}
+
+.at-juris-text .d-atelier .at-display .at-caps {
+  letter-spacing: 0.04em;
+}
+
+.at-juris-text .d-atelier .at-display em {
+  font-weight: 400;
+}
+
+.at-juris-text .d-atelier .at-h2 {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.at-juris-text .d-atelier .at-h3 {
+  font-weight: 500;
+}
+
+/* body — Juris measure: 1rem Lora, looser leading, soft brown-black */
+.at-juris-text .d-atelier .at-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0;
+  color: #57504a;
+}
+
+.at-juris-text .d-atelier .at-sec-dark .at-body {
+  color: #eadfce;
+}
+
+.at-juris-text .d-atelier .at-mission {
+  font-weight: 400;
+}
+
+/* small caps labels — Juris smallcaps */
+.at-juris-text .d-atelier .at-caps-sm {
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.95rem;
+}
+
+/* buttons — Juris button type (Atelier's outline shape stays) */
+.at-juris-text .d-atelier .at-btn {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+}
+
+/* italic accents — oxblood & gold like Juris */
+.at-juris-text .d-atelier .at-note {
+  color: #7b2d26;
+}
+
+.at-juris-text .d-atelier .at-sec-dark .at-note {
+  color: #e8cfa0;
+}
+
+.at-juris-text .d-atelier .at-values {
+  font-family: var(--font-lora), Georgia, serif;
+  letter-spacing: 0.24em;
+  color: #b08d3e;
+}
+
+.at-juris-text .d-atelier .at-service-tagline {
+  color: #b08d3e;
+}
+
+.at-juris-text .d-atelier .at-step-num {
+  color: #b08d3e;
+}
+
+.at-juris-text .d-atelier .at-mantra {
+  color: #e8cfa0;
+}
+
+.at-juris-text .d-atelier .at-list-line {
+  color: #7b2d26;
+}
+
+/* footer text */
+.at-juris-text .d-atelier .at-footer-tagline,
+.at-juris-text .d-atelier .at-footer-line {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+.at-juris-text .d-atelier .at-footer-links a {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
 }
