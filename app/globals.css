@@ -1,8 +1,6 @@
 /* ============================================================
-   Shepherding Child Visits — switchable design systems
-   1. Atelier  (.d-atelier) cream & brown, elegant editorial
-   2. Juris    (.d-juris)   ivory & oxblood, stately legal print
-   3. Blend    (.at-juris-text) Atelier layout, Juris text styles
+   Shepherding Child Visits — Atelier design
+   Cream & brown editorial (.d-atelier)
    ============================================================ */
 
 * {
@@ -25,64 +23,6 @@ svg {
   max-width: 100%;
 }
 
-/* ---- design switcher tabs ---- */
-.design-switcher {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: #101418;
-  color: #cfd6dd;
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.design-switcher-label {
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: #8b949e;
-}
-
-.ds-tab {
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: 1px solid #3a434d;
-  border-radius: 999px;
-  padding: 5px 16px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.ds-tab:hover {
-  border-color: #8b949e;
-  color: #fff;
-}
-
-.ds-tab-active {
-  background: #fff;
-  border-color: #fff;
-  color: #101418;
-  font-weight: 600;
-}
-
-.design-switcher-hint {
-  margin-left: auto;
-  color: #8b949e;
-  font-size: 0.78rem;
-}
-
-@media (max-width: 700px) {
-  .design-switcher-hint {
-    display: none;
-  }
-}
 
 /* ============================================================
    1. ATELIER — cream & brown editorial
@@ -92,15 +32,15 @@ svg {
   --cream: #f7ede1;
   --parchment: #ebe7e0;
   --mist: #f5f5f2;
-  --brown: #3b2e28;
-  --taupe: #605d51;
-  --gold: #b98d5e;
+  --brown: #2f2420;
+  --taupe: #4b473d;
+  --gold: #96703f;
   --cream-text: #fffff9;
 
   background: var(--cream);
   color: var(--brown);
   font-family: var(--font-sans-elegant), "Montserrat", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .d-atelier .at-header {
@@ -155,7 +95,7 @@ svg {
 }
 
 .d-atelier .at-eyebrow.light {
-  color: rgba(255, 255, 249, 0.75);
+  color: rgba(255, 255, 249, 0.88);
 }
 
 .d-atelier .at-display {
@@ -286,8 +226,8 @@ svg {
 }
 
 .d-atelier .at-body {
-  font-size: 0.88rem;
-  font-weight: 300;
+  font-size: 0.9rem;
+  font-weight: 400;
   line-height: 1.9;
   letter-spacing: 0.02em;
   margin-bottom: 14px;
@@ -455,7 +395,7 @@ svg {
   font-family: var(--font-serif), serif;
   font-style: italic;
   font-size: 1.3rem;
-  color: var(--gold);
+  color: #d9b585; /* light gold — sits on the dark commitment band */
   margin-top: 24px;
 }
 
@@ -549,600 +489,17 @@ svg {
   }
 }
 
-/* ============================================================
-   2. JURIS — ivory & oxblood, stately legal print
-   ============================================================ */
 
-.d-juris {
-  --paper: #fdfcf9;
-  --shade: #f4efe6;
-  --ink: #1c1a17;
-  --ink-soft: #57504a;
-  --oxblood: #7b2d26;
-  --gold: #b08d3e;
-
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-lora), Georgia, serif;
-}
-
-.d-juris .jr-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 42px 20px 30px;
-}
-
-.d-juris .jr-brand {
-  font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.d-juris .jr-rule {
-  display: block;
-  width: 120px;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-  height: 4px;
-}
-
-.d-juris .jr-brand-sub {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-
-.d-juris .jr-hero {
-  text-align: center;
-  padding: 56px 24px 40px;
-  max-width: 880px;
-  margin: 0 auto;
-}
-
-.d-juris .jr-eyebrow {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--oxblood);
-  margin-bottom: 18px;
-}
-
-.d-juris .jr-eyebrow.light {
-  color: #e8cfa0;
-}
-
-.d-juris .jr-display {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 500;
-  line-height: 1.15;
-  margin-bottom: 24px;
-}
-
-.d-juris .jr-display em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--oxblood);
-}
-
-.d-juris .jr-lede {
-  font-size: 1.08rem;
-  line-height: 1.85;
-  color: var(--ink-soft);
-  margin-bottom: 18px;
-}
-
-.d-juris .jr-tagline {
-  font-style: italic;
-  color: var(--oxblood);
-  margin-bottom: 30px;
-}
-
-.d-juris .jr-btn-row {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.d-juris .jr-btn {
-  display: inline-block;
-  font-family: var(--font-lora), Georgia, serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  background: var(--oxblood);
-  color: #fdf6ec;
-  padding: 14px 30px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.d-juris .jr-btn:hover {
-  background: #5e211b;
-}
-
-.d-juris .jr-btn-outline {
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-}
-
-.d-juris .jr-btn-outline:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.d-juris .jr-hero-art {
-  max-width: 460px;
-  margin: 44px auto 0;
-}
-
-.d-juris .jr-sec {
-  padding: 68px 24px;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.d-juris .jr-sec-shaded {
-  max-width: none;
-  background: var(--shade);
-}
-
-.d-juris .jr-sec-shaded > * {
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.d-juris .jr-sec-oxblood {
-  max-width: none;
-  background: var(--oxblood);
-  color: #f4ede2;
-  text-align: center;
-}
-
-.d-juris .jr-sec-oxblood > * {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.d-juris .jr-sec-oxblood .jr-body {
-  color: #eadfce;
-}
-
-.d-juris .jr-sec-oxblood svg {
-  margin-bottom: 16px;
-}
-
-.d-juris .jr-heading-block {
-  text-align: center;
-  margin-bottom: 26px;
-}
-
-.d-juris .jr-heading-block::after {
-  content: "";
-  display: block;
-  width: 64px;
-  margin: 20px auto 0;
-  border-top: 1px solid var(--gold);
-}
-
-.d-juris .jr-h2 {
-  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-.d-juris .jr-sec-oxblood .jr-h2 {
-  color: #fdf6ec;
-  font-style: italic;
-}
-
-.d-juris .jr-body {
-  font-size: 1rem;
-  line-height: 1.9;
-  color: var(--ink-soft);
-  margin-bottom: 14px;
-}
-
-.d-juris .jr-note {
-  font-style: italic;
-  color: var(--oxblood);
-  text-align: center;
-  margin-top: 10px;
-}
-
-.d-juris .jr-cols3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
-  margin-top: 40px;
-}
-
-.d-juris .jr-principle {
-  text-align: center;
-}
-
-.d-juris .jr-roman {
-  display: block;
-  font-size: 1.8rem;
-  font-style: italic;
-  color: var(--gold);
-  margin-bottom: 10px;
-  line-height: 1;
-}
-
-.d-juris .jr-smallcaps {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.d-juris .jr-ruled {
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 8px;
-  margin-bottom: 12px;
-  color: var(--oxblood);
-}
-
-.d-juris .jr-serve-list {
-  list-style: none;
-  padding: 0;
-  margin: 24px auto 0;
-  max-width: 520px;
-}
-
-.d-juris .jr-serve-list li {
-  text-align: center;
-  font-style: italic;
-  font-size: 1.05rem;
-  padding: 10px 0;
-  border-bottom: 1px dotted rgba(176, 141, 62, 0.5);
-}
-
-.d-juris .jr-serve-list li:last-child {
-  border-bottom: none;
-}
-
-.d-juris .jr-values {
-  text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 20px;
-}
-
-.d-juris .jr-service-list {
-  list-style: none;
-  padding: 0;
-  margin: 36px 0 0;
-  counter-reset: jr-service;
-}
-
-.d-juris .jr-service {
-  padding: 26px 0;
-  border-bottom: 1px solid rgba(28, 26, 23, 0.12);
-}
-
-.d-juris .jr-service:last-child {
-  border-bottom: none;
-}
-
-.d-juris .jr-service-head {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.d-juris .jr-service-head .jr-smallcaps {
-  margin-bottom: 0;
-}
-
-.d-juris .jr-service-tagline {
-  font-style: italic;
-  color: var(--gold);
-  font-size: 0.95rem;
-}
-
-.d-juris .jr-journey {
-  max-width: 620px;
-  margin: 36px auto;
-}
-
-.d-juris .jr-steps {
-  margin-top: 8px;
-}
-
-.d-juris .jr-step {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 20px;
-  padding: 22px 0;
-  border-bottom: 1px dotted rgba(176, 141, 62, 0.5);
-}
-
-.d-juris .jr-step:last-child {
-  border-bottom: none;
-}
-
-.d-juris .jr-cred-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 26px 40px;
-  margin-top: 36px;
-}
-
-.d-juris .jr-mantra {
-  font-style: italic;
-  font-size: 1.25rem;
-  color: #e8cfa0;
-  margin-top: 20px;
-}
-
-.d-juris .jr-region {
-  max-width: 640px;
-  margin: 0 auto 36px;
-}
-
-.d-juris .jr-cols2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 56px;
-}
-
-.d-juris .jr-lead-line {
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.d-juris .jr-list-line {
-  font-size: 0.95rem;
-  line-height: 1.9;
-  color: var(--oxblood);
-  margin-bottom: 10px;
-}
-
-.d-juris .jr-cta {
-  text-align: center;
-}
-
-.d-juris .jr-cta .jr-btn-row {
-  margin-top: 24px;
-}
-
-.d-juris .jr-footer {
-  text-align: center;
-  padding: 56px 24px 44px;
-  border-top: 1px solid rgba(176, 141, 62, 0.4);
-}
-
-.d-juris .jr-footer .jr-rule {
-  margin: 0 auto 20px;
-}
-
-.d-juris .jr-footer .jr-brand {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.d-juris .jr-footer-tagline {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 20px;
-}
-
-.d-juris .jr-footer-links {
-  display: flex;
-  gap: 26px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.d-juris .jr-footer-links a {
-  color: var(--oxblood);
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(123, 45, 38, 0.35);
-  padding-bottom: 2px;
-}
-
-.d-juris .jr-footer-links a:hover {
-  border-bottom-color: var(--oxblood);
-}
-
-.d-juris .jr-footer-line {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 760px) {
-  .d-juris .jr-cols3,
-  .d-juris .jr-cols2,
-  .d-juris .jr-cred-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ============================================================
-   3. BLEND — Atelier layout, Juris text styles
-   Wraps the Atelier design (.at-juris-text) and restyles every
-   text element with Juris's type treatment: Lora serif, its
-   weights and letter-spacing, oxblood & gold text accents.
-   Backgrounds and layout stay Atelier's.
-   ============================================================ */
-
-.at-juris-text .d-atelier {
-  font-family: var(--font-lora), Georgia, serif;
-  font-weight: 400;
-  color: #1c1a17;
-}
-
-/* every Atelier rule that pins a font-family gets Lora instead */
-.at-juris-text .d-atelier .at-brand,
-.at-juris-text .d-atelier .at-display,
-.at-juris-text .d-atelier .at-hero-tagline,
-.at-juris-text .d-atelier .at-mission,
-.at-juris-text .d-atelier .at-h2,
-.at-juris-text .d-atelier .at-h3,
-.at-juris-text .d-atelier .at-note,
-.at-juris-text .d-atelier .at-caps-sm,
-.at-juris-text .d-atelier .at-service-tagline,
-.at-juris-text .d-atelier .at-serve-list li,
-.at-juris-text .d-atelier .at-step-num,
-.at-juris-text .d-atelier .at-mantra,
-.at-juris-text .d-atelier .at-list-line {
-  font-family: var(--font-lora), Georgia, serif;
-}
-
-/* masthead — Juris brand treatment */
-.at-juris-text .d-atelier .at-brand {
-  font-weight: 500;
-  letter-spacing: 0.18em;
-}
-
-.at-juris-text .d-atelier .at-brand-sub {
-  font-style: italic;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 0.95rem;
-  color: #57504a;
-}
-
-/* eyebrows — Juris small caps in oxblood */
-.at-juris-text .d-atelier .at-eyebrow {
-  font-family: var(--font-lora), Georgia, serif;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  color: #7b2d26;
-}
-
-.at-juris-text .d-atelier .at-eyebrow.light {
-  color: #e8cfa0;
-}
-
-/* display & headings — Juris weight, upright */
-.at-juris-text .d-atelier .at-display {
-  font-weight: 500;
-}
-
-.at-juris-text .d-atelier .at-display .at-caps {
-  letter-spacing: 0.04em;
-}
-
-.at-juris-text .d-atelier .at-display em {
-  font-weight: 400;
-}
-
-.at-juris-text .d-atelier .at-h2 {
-  font-weight: 500;
-  font-style: normal;
-}
-
-.at-juris-text .d-atelier .at-h3 {
-  font-weight: 500;
-}
-
-/* body — Juris measure: 1rem Lora, looser leading, soft brown-black */
-.at-juris-text .d-atelier .at-body {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.9;
-  letter-spacing: 0;
-  color: #57504a;
-}
-
-.at-juris-text .d-atelier .at-sec-dark .at-body {
-  color: #eadfce;
-}
-
-.at-juris-text .d-atelier .at-mission {
-  font-weight: 400;
-}
-
-/* small caps labels — Juris smallcaps */
-.at-juris-text .d-atelier .at-caps-sm {
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  font-size: 0.95rem;
-}
-
-/* buttons — Juris button type (Atelier's outline shape stays) */
-.at-juris-text .d-atelier .at-btn {
-  font-family: var(--font-lora), Georgia, serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.14em;
-}
-
-/* italic accents — oxblood & gold like Juris */
-.at-juris-text .d-atelier .at-note {
-  color: #7b2d26;
-}
-
-.at-juris-text .d-atelier .at-sec-dark .at-note {
-  color: #e8cfa0;
-}
-
-.at-juris-text .d-atelier .at-values {
-  font-family: var(--font-lora), Georgia, serif;
-  letter-spacing: 0.24em;
-  color: #b08d3e;
-}
-
-.at-juris-text .d-atelier .at-service-tagline {
-  color: #b08d3e;
-}
-
-.at-juris-text .d-atelier .at-step-num {
-  color: #b08d3e;
-}
-
-.at-juris-text .d-atelier .at-mantra {
-  color: #e8cfa0;
-}
-
-.at-juris-text .d-atelier .at-list-line {
-  color: #7b2d26;
-}
-
-/* footer text */
-.at-juris-text .d-atelier .at-footer-tagline,
-.at-juris-text .d-atelier .at-footer-line {
-  font-family: var(--font-lora), Georgia, serif;
-}
-
-.at-juris-text .d-atelier .at-footer-links a {
-  font-family: var(--font-lora), Georgia, serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-}
 
 /* ============================================================
    Brand logo — header mark & commitment-section lockup
    ============================================================ */
 
-.d-atelier .at-header,
-.d-juris .jr-header {
+.d-atelier .at-header {
   position: relative;
 }
 
-.d-atelier .at-logo-mark,
-.d-juris .jr-logo-mark {
+.d-atelier .at-logo-mark {
   position: absolute;
   left: 26px;
   top: 50%;
@@ -1153,8 +510,7 @@ svg {
 
 /* the dark commitment bands would swallow the logo's colors,
    so it sits on a small cream plate */
-.d-atelier .at-logo-plate,
-.d-juris .jr-logo-plate {
+.d-atelier .at-logo-plate {
   display: inline-block;
   background: #fffef9;
   border-radius: 10px;
@@ -1162,16 +518,14 @@ svg {
   margin-bottom: 24px;
 }
 
-.d-atelier .at-logo-plate img,
-.d-juris .jr-logo-plate img {
+.d-atelier .at-logo-plate img {
   width: 170px;
   height: auto;
   display: block;
 }
 
 @media (max-width: 640px) {
-  .d-atelier .at-logo-mark,
-  .d-juris .jr-logo-mark {
+  .d-atelier .at-logo-mark {
     height: 40px;
     left: 12px;
   }
@@ -1196,24 +550,3 @@ svg {
   border-bottom-color: currentColor;
 }
 
-.at-juris-text .d-atelier .at-phone {
-  font-family: var(--font-lora), Georgia, serif;
-}
-
-.d-juris .jr-phone {
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-top: 24px;
-  color: var(--ink-soft);
-}
-
-.d-juris .jr-tel {
-  color: var(--oxblood);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(123, 45, 38, 0.35);
-  padding-bottom: 2px;
-}
-
-.d-juris .jr-tel:hover {
-  border-bottom-color: var(--oxblood);
-}
