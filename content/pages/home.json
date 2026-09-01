@@ -179,19 +179,35 @@
     "eyebrow": "Our Commitment to Your Family",
     "heading": "Every Family Deserves Respect.",
     "body": "We recognize that families arrive at supervised visitation for many different reasons. Whatever the circumstances, we believe every person deserves to be treated with dignity. Our responsibility is to provide a professional environment where children can maintain safe and meaningful relationships with their parents and loved ones while established court requirements and visitation protocols are respected.",
-    "lines": ["We don't take sides.", "We don't judge.", "We focus on the child."]
+    "lines": [
+      "We don't take sides.",
+      "We don't judge.",
+      "We focus on the child."
+    ]
   },
   "areas": {
     "eyebrow": "Areas We Serve",
     "heading": "Professional Visitation Services Throughout Southern California",
     "body": "Our monitors travel throughout our service area to accommodate the individual needs of families and the requirements of applicable court orders. If you are unsure whether we serve your location, please contact us — we are happy to discuss your specific visitation needs.",
-    "items": ["Los Angeles County", "Orange County", "Riverside County", "San Bernardino County"]
+    "items": [
+      "Los Angeles County",
+      "Orange County",
+      "Riverside County",
+      "San Bernardino County"
+    ]
   },
   "availability": {
     "eyebrow": "Availability",
     "heading": "Flexible Scheduling to Meet Your Needs",
     "body": "We understand that families and court orders may require flexibility. Subject to monitor availability, we offer supervised visitation services during:",
-    "items": ["Weekdays", "Weekends", "Evenings", "Holidays", "Overnight visits", "Extended or vacation visitations"]
+    "items": [
+      "Weekdays",
+      "Weekends",
+      "Evenings",
+      "Holidays",
+      "Overnight visits",
+      "Extended or vacation visitations"
+    ]
   },
   "locations": {
     "eyebrow": "Visitation Locations",
@@ -237,7 +253,7 @@
     },
     {
       "label": "Parent Guidelines",
-      "url": "#"
+      "url": "#https://selfhelp.courts.ca.gov/guide-supervised-visitation"
     }
   ],
   "footer": {
