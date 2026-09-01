@@ -248,6 +248,28 @@ export default function AtelierDesign({ page }: DesignProps) {
         </section>
       )}
 
+      {/* Team & standards */}
+      {team && (
+        <section className="at-sec at-sec-panel" id="about">
+          <div className="at-center at-narrow">
+            <span className="at-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
+            <h2 className="at-h2 italic" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
+            <p className="at-body" data-tina-field={tinaField(team, "body")}>{team.body}</p>
+          </div>
+          <div className="at-cols3 at-credentials">
+            {team.credentials?.map(
+              (c, i) =>
+                c && (
+                  <div className="at-col" key={i} data-tina-field={tinaField(c)}>
+                    <h3 className="at-caps-sm">{c.title}</h3>
+                    <p className="at-body">{c.description}</p>
+                  </div>
+                )
+            )}
+          </div>
+        </section>
+      )}
+
       {director && (
         <section className="at-sec">
           <div className="at-center at-narrow">
@@ -275,28 +297,6 @@ export default function AtelierDesign({ page }: DesignProps) {
             <p className="at-mantra">
               {commitment.lines?.filter(Boolean).join("  ·  ")}
             </p>
-          </div>
-        </section>
-      )}
-
-      {/* Team & standards */}
-      {team && (
-        <section className="at-sec at-sec-panel" id="about">
-          <div className="at-center at-narrow">
-            <span className="at-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
-            <h2 className="at-h2 italic" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
-            <p className="at-body" data-tina-field={tinaField(team, "body")}>{team.body}</p>
-          </div>
-          <div className="at-cols3 at-credentials">
-            {team.credentials?.map(
-              (c, i) =>
-                c && (
-                  <div className="at-col" key={i} data-tina-field={tinaField(c)}>
-                    <h3 className="at-caps-sm">{c.title}</h3>
-                    <p className="at-body">{c.description}</p>
-                  </div>
-                )
-            )}
           </div>
         </section>
       )}
