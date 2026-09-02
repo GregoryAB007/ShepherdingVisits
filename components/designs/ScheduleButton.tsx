@@ -8,9 +8,6 @@ type Props = {
   mail: string;
   /** tel: link for "Call Us" — omitted when no phone number is set */
   tel?: string | null;
-  /** plain-text address and number shown under each choice */
-  emailText?: string | null;
-  phoneText?: string | null;
   /** "light" renders the outlined button for dark backgrounds */
   variant?: "light" | "default";
   tinaField?: string;
@@ -22,8 +19,6 @@ export default function ScheduleButton({
   label,
   mail,
   tel,
-  emailText,
-  phoneText,
   variant = "default",
   tinaField,
 }: Props) {
@@ -71,13 +66,11 @@ export default function ScheduleButton({
           {hasMail && (
             <a className="at-pop-item" role="menuitem" href={mail}>
               Email Us
-              {emailText && <span className="at-pop-detail">{emailText}</span>}
             </a>
           )}
           {tel && (
             <a className="at-pop-item" role="menuitem" href={tel}>
               Call Us
-              {phoneText && <span className="at-pop-detail">{phoneText}</span>}
             </a>
           )}
         </span>

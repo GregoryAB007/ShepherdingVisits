@@ -22,6 +22,34 @@ export default function AtelierDesign({ page }: DesignProps) {
   const mail = ctaHref(page);
   const tel = phoneHref(page);
 
+  // Built as a list so the footer can put a • between each entry without
+  // trailing separators when a link is absent.
+  const footerItems = [
+    ...(resources ?? []).flatMap((r, i) =>
+      r?.label
+        ? [
+            <a key={`res-${i}`} href={r.url ?? "#"} data-tina-field={tinaField(r)}>
+              {r.label}
+            </a>,
+          ]
+        : []
+    ),
+    ...(contact?.phone && tel
+      ? [
+          <a key="tel" className="at-footer-contact" href={tel}>
+            {contact.phone}
+          </a>,
+        ]
+      : []),
+    ...(footer?.contactEmail
+      ? [
+          <a key="mail" className="at-footer-contact" href={`mailto:${footer.contactEmail}`}>
+            {footer.contactEmail}
+          </a>,
+        ]
+      : []),
+  ];
+
   return (
     <div className="dz d-atelier" id="top">
       <header className="at-header">
@@ -59,8 +87,6 @@ export default function AtelierDesign({ page }: DesignProps) {
             label={hero?.primaryCta ?? "Schedule a Consultation"}
             mail={mail}
             tel={tel}
-            emailText={contact?.email ?? footer?.contactEmail}
-            phoneText={contact?.phone}
             variant="light"
             tinaField={tinaField(hero ?? undefined, "primaryCta")}
           />
@@ -320,8 +346,6 @@ export default function AtelierDesign({ page }: DesignProps) {
                 label={finalCta.primaryCta ?? "Schedule a Consultation"}
                 mail={mail}
                 tel={tel}
-                emailText={contact?.email ?? footer?.contactEmail}
-                phoneText={contact?.phone}
                 tinaField={tinaField(finalCta, "primaryCta")}
               />
             </div>
@@ -343,16 +367,16 @@ export default function AtelierDesign({ page }: DesignProps) {
           {footer?.tagline}
         </p>
         <div className="at-footer-links">
-          {resources?.map(
-            (r, i) =>
-              r?.label && (
-                <a key={i} href={r.url ?? "#"} data-tina-field={tinaField(r)}>
-                  {r.label}
-                </a>
-              )
+          {footerItems.flatMap((el, i) =>
+            i === 0
+              ? [el]
+              : [
+                  <span className="at-footer-sep" key={`sep-${i}`} aria-hidden="true">
+                    •
+                  </span>,
+                  el,
+                ]
           )}
-          {contact?.phone && tel && <a href={tel}>{contact.phone}</a>}
-          {footer?.contactEmail && <a href={`mailto:${footer.contactEmail}`}>{footer.contactEmail}</a>}
         </div>
         <p className="at-footer-line" data-tina-field={tinaField(footer ?? undefined, "line")}>
           {footer?.line}
@@ -379,7 +403,8 @@ export default function AtelierDesign({ page }: DesignProps) {
               fill="currentColor"
             />
           </svg>
-          Call or text {contact.phone}
+          <span className="at-pill-words">Call or text</span>
+          {contact.phone}
         </a>
       )}
     </div>
