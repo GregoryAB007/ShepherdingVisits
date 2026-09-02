@@ -544,6 +544,128 @@ svg {
   margin-top: 26px;
 }
 
+/* "Schedule a Consultation" opens a small Email Us / Call Us menu */
+.d-atelier .at-schedule {
+  position: relative;
+  display: inline-block;
+}
+
+/* the trigger is a <button>, so reset the UA styles the <a> siblings lack */
+.d-atelier .at-schedule .at-btn {
+  font-family: inherit;
+  cursor: pointer;
+  background: transparent;
+}
+
+.d-atelier .at-pop {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  background: #fffef9;
+  border: 1px solid rgba(47, 36, 32, 0.22);
+  box-shadow: 0 14px 30px rgba(47, 36, 32, 0.22);
+}
+
+/* little pointer up toward the button */
+.d-atelier .at-pop::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  background: #fffef9;
+  border-left: 1px solid rgba(47, 36, 32, 0.22);
+  border-top: 1px solid rgba(47, 36, 32, 0.22);
+  transform: rotate(45deg);
+}
+
+.d-atelier .at-pop-item {
+  position: relative;
+  padding: 14px 22px;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brown);
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.d-atelier .at-pop-item + .at-pop-item {
+  border-top: 1px solid rgba(47, 36, 32, 0.14);
+}
+
+.d-atelier .at-pop-item:hover {
+  background: var(--brown);
+  color: var(--cream-text);
+}
+
+/* the actual address / number, so it is readable even where a device
+   has no mail client or dialer to hand the link off to */
+.d-atelier .at-pop-detail {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--gold);
+}
+
+.d-atelier .at-pop-item:hover .at-pop-detail {
+  color: #e2c49a;
+}
+
+/* floating back to top, bottom left — plain text, no pill.
+   Gold reads on both the cream and the dark brown bands it floats over,
+   and the soft shadow lifts it off whichever one is behind it. */
+.d-atelier .at-float-top {
+  position: fixed;
+  left: 24px;
+  bottom: 26px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(47, 36, 32, 0.45);
+  filter: drop-shadow(0 1px 2px rgba(47, 36, 32, 0.4));
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.d-atelier .at-float-top:hover {
+  transform: translateY(-2px);
+  color: #c19a63;
+}
+
+.d-atelier .at-float-top svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .d-atelier .at-float-top {
+    left: 16px;
+    bottom: 18px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+}
+
 /* floating call pill, bottom right */
 .d-atelier .at-float-pill {
   position: fixed;

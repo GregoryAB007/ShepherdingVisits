@@ -237,7 +237,6 @@ export default defineConfig({
             label: "Final call to action",
             fields: sectionFields([
               { type: "string", name: "primaryCta", label: "Primary button text" },
-              { type: "string", name: "secondaryCta", label: "Secondary button text" },
             ]),
           },
           {

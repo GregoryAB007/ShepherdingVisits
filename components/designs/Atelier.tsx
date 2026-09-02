@@ -8,6 +8,7 @@ import {
   type Palette,
 } from "../illustrations";
 import { ctaHref, phoneHref, LOGO, LOGO_MARK, type DesignProps } from "./types";
+import ScheduleButton from "./ScheduleButton";
 
 // Warm editorial palette: cream paper, deep brown ink, muted parchment panels.
 const palette: Palette = { ink: "#3b2e28", accent: "#b98d5e", soft: "#e6dccb" };
@@ -54,9 +55,15 @@ export default function AtelierDesign({ page }: DesignProps) {
           </p>
         )}
         <div className="at-btn-row">
-          <a className="at-btn light" href={mail} data-tina-field={tinaField(hero ?? undefined, "primaryCta")}>
-            {hero?.primaryCta}
-          </a>
+          <ScheduleButton
+            label={hero?.primaryCta ?? "Schedule a Consultation"}
+            mail={mail}
+            tel={tel}
+            emailText={contact?.email ?? footer?.contactEmail}
+            phoneText={contact?.phone}
+            variant="light"
+            tinaField={tinaField(hero ?? undefined, "primaryCta")}
+          />
           <a className="at-btn light" href="#services" data-tina-field={tinaField(hero ?? undefined, "secondaryCta")}>
             {hero?.secondaryCta}
           </a>
@@ -309,8 +316,14 @@ export default function AtelierDesign({ page }: DesignProps) {
             <h2 className="at-h2 italic" data-tina-field={tinaField(finalCta, "heading")}>{finalCta.heading}</h2>
             <p className="at-body" data-tina-field={tinaField(finalCta, "body")}>{finalCta.body}</p>
             <div className="at-btn-row">
-              <a className="at-btn" href={mail}>{finalCta.primaryCta}</a>
-              <a className="at-btn" href={tel ?? mail}>{finalCta.secondaryCta}</a>
+              <ScheduleButton
+                label={finalCta.primaryCta ?? "Schedule a Consultation"}
+                mail={mail}
+                tel={tel}
+                emailText={contact?.email ?? footer?.contactEmail}
+                phoneText={contact?.phone}
+                tinaField={tinaField(finalCta, "primaryCta")}
+              />
             </div>
             {contact?.phone && tel && (
               <p className="at-phone">
@@ -345,6 +358,17 @@ export default function AtelierDesign({ page }: DesignProps) {
           {footer?.line}
         </p>
       </footer>
+
+      {/* floating back-to-top pill */}
+      <a className="at-float-top" href="#top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path
+            d="M12 5.5l6.2 6.2-1.4 1.4-3.8-3.8V19h-2V9.3l-3.8 3.8-1.4-1.4L12 5.5z"
+            fill="currentColor"
+          />
+        </svg>
+        Back to Top
+      </a>
 
       {/* floating call pill */}
       {contact?.phone && tel && (
