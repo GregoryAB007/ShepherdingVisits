@@ -242,9 +242,6 @@ export default function AtelierDesign({ page }: DesignProps) {
                 )
             )}
           </div>
-          {steps.note && (
-            <p className="at-values at-center-block" data-tina-field={tinaField(steps, "note")}>{steps.note}</p>
-          )}
         </section>
       )}
 
@@ -254,6 +251,9 @@ export default function AtelierDesign({ page }: DesignProps) {
           <div className="at-center at-narrow">
             <span className="at-eyebrow" data-tina-field={tinaField(team, "eyebrow")}>{team.eyebrow}</span>
             <h2 className="at-h2 italic" data-tina-field={tinaField(team, "heading")}>{team.heading}</h2>
+            {team.note && (
+              <p className="at-values" data-tina-field={tinaField(team, "note")}>{team.note}</p>
+            )}
             <p className="at-body" data-tina-field={tinaField(team, "body")}>{team.body}</p>
           </div>
           <div className="at-cols3 at-credentials">

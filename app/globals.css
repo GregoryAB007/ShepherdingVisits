@@ -314,6 +314,11 @@ svg {
   margin-top: 18px;
 }
 
+/* the training line sits between the team heading and its body copy */
+.d-atelier .at-center > .at-values {
+  margin-bottom: 22px;
+}
+
 .d-atelier .at-service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

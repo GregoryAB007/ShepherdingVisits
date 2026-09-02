@@ -173,7 +173,6 @@ export default defineConfig({
             label: "How it works",
             fields: sectionFields([
               titleDescriptionList("items", "Steps", "New step"),
-              textarea("note", "Monitor training note"),
             ]),
           },
           {
@@ -181,6 +180,7 @@ export default defineConfig({
             name: "team",
             label: "Our team",
             fields: sectionFields([
+              textarea("note", "Monitor training line"),
               titleDescriptionList("credentials", "Professional standards", "New credential"),
             ]),
           },
