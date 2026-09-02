@@ -345,6 +345,19 @@ export default function AtelierDesign({ page }: DesignProps) {
           {footer?.line}
         </p>
       </footer>
+
+      {/* floating call pill */}
+      {contact?.phone && tel && (
+        <a className="at-float-pill" href={tel} aria-label={`Call or text ${contact.phone}`}>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path
+              d="M6.6 3.2c.6-.6 1.6-.5 2.1.2l1.6 2.2c.4.6.4 1.4-.1 1.9l-1 1.1c.5 1.1 1.2 2.1 2.1 3 .9.9 1.9 1.6 3 2.1l1.1-1c.5-.5 1.3-.5 1.9-.1l2.2 1.6c.7.5.8 1.5.2 2.1l-1.2 1.2c-.6.6-1.5.9-2.3.7-2.5-.6-4.9-2-6.9-4s-3.4-4.4-4-6.9c-.2-.8.1-1.7.7-2.3l1.2-1.2z"
+              fill="currentColor"
+            />
+          </svg>
+          Call or text {contact.phone}
+        </a>
+      )}
     </div>
   );
 }
