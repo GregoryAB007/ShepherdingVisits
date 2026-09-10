@@ -141,7 +141,7 @@
   "team": {
     "eyebrow": "Our Team",
     "heading": "Experience You Can Trust",
-    "body": "We understand what's at stake, this is why we believe in the highest quality professionals. Our team brings together more than 15 years of combined experience supporting children and families in a variety of professional settings — including Foster Parenting, Professional Supervised visitation, Education, Social Services, trained in Child Abuse & Neglect, and Family Law offices. These varied experiences have given our team an understanding of the different developmental, emotional, and social needs of children at every stage. Our monitors approach each visit with patience, professionalism, neutrality, and respect, while keeping the child's safety and well-being at the center of everything we do.",
+    "body": "We understand what's at stake, this is why we believe in the highest quality professionals. Our team brings together more than 15 years of combined experience supporting children and families in a variety of professional settings — including Foster Parenting, Professional Supervised visitation, Child Development, Education, and Family Law offices. These varied experiences have given our team an understanding of the different developmental, emotional, and social needs of children at every stage. Our monitors approach each visit with patience, professionalism, neutrality, and respect, while keeping the child's safety and well-being at the center of everything we do.",
     "note": "Our professional monitors are trained in: Safety • Security • Supervision • Awareness • Child Development • Neutrality • De-escalation",
     "credentials": [
       {
@@ -167,6 +167,10 @@
       {
         "title": "TrustLine Registered & Certified",
         "description": "Registered and certified with TrustLine, California's childcare background-check registry, as applicable to their role."
+      },
+      {
+        "title": "Trained in Child Abuse & Neglect",
+        "description": "Child safety is at the heart of every visit. Our monitors receive training in child abuse and neglect awareness, including recognizing potential signs of concern and understanding appropriate procedures to help protect the children in our care."
       }
     ]
   },
